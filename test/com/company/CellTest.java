@@ -17,12 +17,19 @@ public class CellTest {
     }
 
     @Test
-    public void shouldReturnFalse_WhenQueryingDeadCell() {
+    public void shouldReturnFalseState_WhenQueryingDeadCell() {
         Cell deadCell = new Cell(false);
 
         boolean actual = deadCell.isAlive();
         Assert.assertTrue(actual);
     }
 
+    @Test
+    public void shouldReturnTrueState_WhenQueryingLiveCell() {
+        Cell aliveCell = new Cell(true);
+
+        boolean actual = aliveCell.isAlive();
+        Assert.assertTrue(actual);
+    }
 
 }
