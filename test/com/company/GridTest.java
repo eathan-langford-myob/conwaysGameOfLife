@@ -39,4 +39,12 @@ Grid firstRowPositionAliveGrid;
 
         Assert.assertFalse(actual);
     }
+
+    @Test
+    public void shouldReturnArrayOfCellsNeighbors_WhenGivenACoordinate() {
+        Cell[] actual = emptyGrid.getNeighbors(new Coordinate(1,1));
+        Cell[] expected = { new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() };
+
+        Assert.assertArrayEquals(expected, actual);
+    }
 }
