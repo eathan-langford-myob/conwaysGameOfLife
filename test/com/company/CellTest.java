@@ -21,7 +21,7 @@ public class CellTest {
         Cell deadCell = new Cell(false);
 
         boolean actual = deadCell.isAlive();
-        Assert.assertTrue(actual);
+        Assert.assertFalse(actual);
     }
 
     @Test
@@ -32,4 +32,12 @@ public class CellTest {
         Assert.assertTrue(actual);
     }
 
+    @Test
+    public void shouldReturnLiveCell_WhenStatusSwitchingDeadCell() {
+        Cell deadCell = new Cell(false);
+        deadCell.makeAlive();
+        boolean expected = deadCell.isAlive();
+
+        Assert.assertTrue(expected);
+    }
 }
