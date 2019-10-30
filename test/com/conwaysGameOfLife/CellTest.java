@@ -1,4 +1,4 @@
-package com.company;
+package com.conwaysGameOfLife;
 
 
 import org.junit.*;

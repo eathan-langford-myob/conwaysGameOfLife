@@ -1,4 +1,4 @@
-package com.company;
+package com.conwaysGameOfLife;
 
 public class Grid {
     Cell[][] grid;
@@ -6,9 +6,9 @@ public class Grid {
     int gridWidth;
 
     public Grid(int height, int width) {
-    this.gridHeight = height;
-    this.gridWidth = width;
-    this.grid = new Cell[width][height];
+        this.gridHeight = height;
+        this.gridWidth = width;
+        this.grid = new Cell[width][height];
         for (int x = 0; x < gridWidth; x++) {
             for (int y = 0; y < gridHeight; y++) {
                 grid[x][y] = new Cell();
@@ -40,7 +40,7 @@ public class Grid {
         return true;
     }
 
-    public Cell[] getNeighbors(Coordinate coordinate) {
+    public Cell[] getNeighborsOfCell(Coordinate coordinate) {
         int x = coordinate.getX();
         int y = coordinate.getY();
         int left = (x - 1 + gridWidth) % gridWidth;

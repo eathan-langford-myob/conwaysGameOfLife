@@ -1,4 +1,4 @@
-package com.company;
+package com.conwaysGameOfLife;
 
 import org.junit.*;
 
@@ -42,7 +42,7 @@ Grid firstRowPositionAliveGrid;
 
     @Test
     public void shouldReturnArrayOfCellsNeighbors_WhenGivenACoordinate() {
-        Cell[] actual = emptyGrid.getNeighbors(new Coordinate(1,1));
+        Cell[] actual = emptyGrid.getNeighborsOfCell(new Coordinate(1,1));
         Cell[] expected = {
                 emptyGrid.getCell(new Coordinate(0,0)),
                 emptyGrid.getCell(new Coordinate(1,0)),

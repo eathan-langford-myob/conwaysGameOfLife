@@ -1,9 +1,10 @@
-package com.company;
+
+package com.conwaysGameOfLife;
 
 import java.util.Objects;
 
 public class Cell {
-   private boolean isAlive;
+    private boolean isAlive;
 
     public Cell() {
         this.isAlive = false;
@@ -27,8 +28,8 @@ public class Cell {
     }
 
     public boolean isAlive(){
-    return isAlive;
-}
+        return isAlive;
+    }
     public void makeAlive() {
         isAlive = !isAlive;
     }
