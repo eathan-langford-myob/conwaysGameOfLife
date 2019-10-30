@@ -39,4 +39,8 @@ public class Grid {
         }
         return true;
     }
+
+    public Cell[] getNeighbors(Coordinate coordinate) {
+        return new Cell[]{new Cell()};
+    }
 }
