@@ -41,6 +41,23 @@ public class Grid {
     }
 
     public Cell[] getNeighbors(Coordinate coordinate) {
-        return new Cell[]{new Cell()};
+        int x = coordinate.getX();
+        int y = coordinate.getY();
+        int left = (x - 1 + gridWidth) % gridWidth;
+        int right = (x + 1) % gridWidth;
+        int up = (y - 1 + gridHeight) % gridHeight;
+        int down = (y + 1) % gridHeight;
+
+
+        return new Cell[]{
+                getCell(new Coordinate(left, up)),
+                getCell(new Coordinate(x, up)),
+                getCell(new Coordinate(right, up)),
+                getCell(new Coordinate(right, y)),
+                getCell(new Coordinate(right, down)),
+                getCell(new Coordinate(x, down)),
+                getCell(new Coordinate(left, down)),
+                getCell(new Coordinate(left, y))
+        };
     }
 }

@@ -43,7 +43,16 @@ Grid firstRowPositionAliveGrid;
     @Test
     public void shouldReturnArrayOfCellsNeighbors_WhenGivenACoordinate() {
         Cell[] actual = emptyGrid.getNeighbors(new Coordinate(1,1));
-        Cell[] expected = { new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() };
+        Cell[] expected = {
+                emptyGrid.getCell(new Coordinate(0,0)),
+                emptyGrid.getCell(new Coordinate(1,0)),
+                emptyGrid.getCell(new Coordinate(2,0)),
+                emptyGrid.getCell(new Coordinate(2,1)),
+                emptyGrid.getCell(new Coordinate(2,2)),
+                emptyGrid.getCell(new Coordinate(1,2)),
+                emptyGrid.getCell(new Coordinate(0,2)),
+                emptyGrid.getCell(new Coordinate(0,1)),
+                };
 
         Assert.assertArrayEquals(expected, actual);
     }
