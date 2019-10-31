@@ -35,7 +35,7 @@ public class CellTest {
     @Test
     public void shouldReturnLiveCell_WhenStatusSwitchingDeadCell() {
         Cell deadCell = new Cell(false);
-        deadCell.makeAlive();
+        deadCell.changeStatus();
         boolean expected = deadCell.isAlive();
 
         Assert.assertTrue(expected);

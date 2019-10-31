@@ -26,7 +26,7 @@ Grid firstRowPositionAliveGrid;
     @Test
     public void shouldReturnTrue_WhenQueryingRowWithLiveCells() {
         firstRowPositionAliveGrid = new Grid(3,3);
-        firstRowPositionAliveGrid.getCell(new Coordinate(0,0)).makeAlive();
+        firstRowPositionAliveGrid.getCell(new Coordinate(0,0)).changeStatus();
 
         boolean expected = firstRowPositionAliveGrid.rowHasLiveCells(new Coordinate(0,0));
 
