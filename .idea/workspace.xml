@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="101412fe-5849-430c-a5d8-cf12413a30e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/conwaysGameOfLife/IO/IOValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/conwaysGameOfLife/IO/IOValidatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            <state relative-caret-position="168">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,15 +76,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state relative-caret-position="1680">
+              <caret line="80" column="46" lean-forward="true" selection-start-line="80" selection-start-column="46" selection-end-line="80" selection-end-column="46" />
               <folding>
                 <element signature="e#160#161#0" expanded="true" />
                 <element signature="e#196#197#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/IO/IOValidator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#126#127#0" expanded="true" />
+                <element signature="e#153#154#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/IO/IOValidatorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -113,8 +135,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Arquillian JUnit Test Class" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -144,6 +166,8 @@
         <option value="$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java" />
         <option value="$PROJECT_DIR$/src/com/conwaysGameOfLife/Grid.java" />
         <option value="$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java" />
+        <option value="$PROJECT_DIR$/test/com/conwaysGameOfLife/IO/IOValidatorTest.java" />
+        <option value="$PROJECT_DIR$/src/com/conwaysGameOfLife/IO/IOValidator.java" />
       </list>
     </option>
   </component>
@@ -181,6 +205,13 @@
             <path>
               <item name="ConwaysGameOfLife" type="b2602c69:ProjectViewProjectNode" />
               <item name="ConwaysGameOfLife" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="conwaysGameOfLife" type="462c0819:PsiDirectoryNode" />
+              <item name="IO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ConwaysGameOfLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConwaysGameOfLife" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -188,6 +219,13 @@
               <item name="ConwaysGameOfLife" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="conwaysGameOfLife" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ConwaysGameOfLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConwaysGameOfLife" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conwaysGameOfLife" type="462c0819:PsiDirectoryNode" />
+              <item name="IO" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -247,7 +285,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RulesTest">
+  <component name="RunManager" selected="JUnit.IOValidatorTest.shouldReturnTrueForValidFormatString">
+    <configuration name="IOValidatorTest.shouldReturnTrueForValidFormatString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ConwaysGameOfLife" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.conwaysGameOfLife.IO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.conwaysGameOfLife.IO" />
+      <option name="MAIN_CLASS_NAME" value="com.conwaysGameOfLife.IO.IOValidatorTest" />
+      <option name="METHOD_NAME" value="shouldReturnTrueForValidFormatString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RulesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ConwaysGameOfLife" />
       <extension name="coverage">
@@ -311,36 +365,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RulesTest.shouldReturnNumberOfDeadNeighbors_WhenQueryingRules" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ConwaysGameOfLife" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.conwaysGameOfLife.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.conwaysGameOfLife" />
-      <option name="MAIN_CLASS_NAME" value="com.conwaysGameOfLife.RulesTest" />
-      <option name="METHOD_NAME" value="shouldReturnNumberOfDeadNeighbors_WhenQueryingRules" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.RulesTest.shouldReturnNumberOfDeadNeighbors_WhenQueryingRules" />
       <item itemvalue="JUnit.RulesTest.shouldReturnDeadCell_WhenSurroundedBy3LiveCells" />
       <item itemvalue="JUnit.RulesTest.shouldReturnLiveCell_WhenSurroundedBy2LiveCells" />
       <item itemvalue="JUnit.RulesTest" />
       <item itemvalue="JUnit.RulesTest.shouldReturnLiveCell_WhenSurroundedBy3LiveCells" />
+      <item itemvalue="JUnit.IOValidatorTest.shouldReturnTrueForValidFormatString" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IOValidatorTest.shouldReturnTrueForValidFormatString" />
         <item itemvalue="JUnit.RulesTest" />
         <item itemvalue="JUnit.RulesTest.shouldReturnLiveCell_WhenSurroundedBy3LiveCells" />
         <item itemvalue="JUnit.RulesTest.shouldReturnDeadCell_WhenSurroundedBy3LiveCells" />
         <item itemvalue="JUnit.RulesTest.shouldReturnLiveCell_WhenSurroundedBy2LiveCells" />
-        <item itemvalue="JUnit.RulesTest.shouldReturnNumberOfDeadNeighbors_WhenQueryingRules" />
       </list>
     </recent_temporary>
   </component>
@@ -407,25 +445,17 @@
       <option name="project" value="LOCAL" />
       <updated>1572493241218</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="solved test for rules behaviour">
+      <created>1572495529303</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572495529303</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RulesTest_shouldReturnNumberOfDeadNeighbors_WhenQueryingRules - 2019.10.31 at 09h 52m 21s.xml">
-      <configuration name="RulesTest.shouldReturnNumberOfDeadNeighbors_WhenQueryingRules" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RulesTest_shouldReturnDeadCell_WhenSurroundedBy3LiveCells - 2019.10.31 at 14h 13m 04s.xml">
-      <configuration name="RulesTest.shouldReturnDeadCell_WhenSurroundedBy3LiveCells" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RulesTest_shouldReturnDeadCell_WhenSurroundedBy3LiveCells - 2019.10.31 at 14h 15m 06s.xml">
-      <configuration name="RulesTest.shouldReturnDeadCell_WhenSurroundedBy3LiveCells" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RulesTest_shouldReturnDeadCell_WhenSurroundedBy3LiveCells - 2019.10.31 at 14h 15m 35s.xml">
-      <configuration name="RulesTest.shouldReturnDeadCell_WhenSurroundedBy3LiveCells" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RulesTest_shouldReturnDeadCell_WhenSurroundedBy3LiveCells - 2019.10.31 at 14h 26m 06s.xml">
-      <configuration name="RulesTest.shouldReturnDeadCell_WhenSurroundedBy3LiveCells" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RulesTest_shouldReturnDeadCell_WhenSurroundedBy3LiveCells - 2019.10.31 at 14h 26m 09s.xml">
       <configuration name="RulesTest.shouldReturnDeadCell_WhenSurroundedBy3LiveCells" configurationId="JUnit" />
     </history-entry>
@@ -441,9 +471,24 @@
     <history-entry file="RulesTest_shouldReturnDeadCell_WhenSurroundedBy3LiveCells - 2019.10.31 at 15h 13m 38s.xml">
       <configuration name="RulesTest.shouldReturnDeadCell_WhenSurroundedBy3LiveCells" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RulesTest_shouldReturnLiveCell_WhenSurroundedBy3LiveCells - 2019.10.31 at 15h 15m 07s.xml">
+      <configuration name="RulesTest.shouldReturnLiveCell_WhenSurroundedBy3LiveCells" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RulesTest_shouldReturnLiveCell_WhenSurroundedBy3LiveCells - 2019.10.31 at 15h 16m 03s.xml">
+      <configuration name="RulesTest.shouldReturnLiveCell_WhenSurroundedBy3LiveCells" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RulesTest_shouldReturnLiveCell_WhenSurroundedBy3LiveCells - 2019.10.31 at 15h 16m 16s.xml">
+      <configuration name="RulesTest.shouldReturnLiveCell_WhenSurroundedBy3LiveCells" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RulesTest - 2019.10.31 at 15h 16m 51s.xml">
+      <configuration name="RulesTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RulesTest - 2019.10.31 at 15h 17m 42s.xml">
+      <configuration name="RulesTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35261000" />
+    <option name="totallyTimeSpent" value="36133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
@@ -459,18 +504,18 @@
       <window_info anchor="bottom" id="GitHub Pull Requests" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.4968051" visible="true" weight="0.305835" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49946752" weight="0.3993964" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49627262" weight="0.305835" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49893504" weight="0.3993964" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Regex" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50319487" side_tool="true" weight="0.305835" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50479233" side_tool="true" weight="0.3189135" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49840257" weight="0.32897383" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49574015" weight="0.3189135" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="14" sideWeight="0.49520767" visible="true" weight="0.3189135" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -518,7 +563,20 @@
     <MESSAGE value="solved test to get neighbors of Cell" />
     <MESSAGE value="add test for getting live cells from neighbors" />
     <MESSAGE value="add test for calculating a cells state based on neighbors rule" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test for calculating a cells state based on neighbors rule" />
+    <MESSAGE value="solved test for rules behaviour" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved test for rules behaviour" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/GridTest.java" />
@@ -551,13 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="75" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -630,16 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.4.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Arrays.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -650,14 +691,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        <state relative-caret-position="1680">
+          <caret line="80" column="46" lean-forward="true" selection-start-line="80" selection-start-column="46" selection-end-line="80" selection-end-column="46" />
           <folding>
             <element signature="e#160#161#0" expanded="true" />
             <element signature="e#196#197#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/IO/IOValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#153#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/IO/IOValidatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
         </state>
       </provider>
     </entry>
