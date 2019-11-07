@@ -32,7 +32,7 @@ public class RulesTest {
         neighbors = grid.getNeighborsOfCell(new Coordinate(1,1));
         Cell queriedCell = grid.getCell(new Coordinate(1,1));
 
-        boolean actual = Rules.calculateCellsNextLife(queriedCell, neighbors);
+        boolean actual = Rules.calculateCellLifeExpectancy(queriedCell, neighbors);
 
         Assert.assertTrue(actual);
     }
@@ -45,7 +45,7 @@ public class RulesTest {
         Cell queriedCell = grid.getCell(new Coordinate(1,1));
         queriedCell.makeCellAlive();
 
-        boolean actual = Rules.calculateCellsNextLife(queriedCell, neighbors);
+        boolean actual = Rules.calculateCellLifeExpectancy(queriedCell, neighbors);
 
         Assert.assertTrue(actual);
     }
@@ -60,7 +60,7 @@ public class RulesTest {
         Cell queriedCell = grid.getCell(new Coordinate(1,1));
         queriedCell.makeCellAlive();
 
-        boolean actual = Rules.calculateCellsNextLife(queriedCell, neighbors);
+        boolean actual = Rules.calculateCellLifeExpectancy(queriedCell, neighbors);
 
         Assert.assertFalse(actual);
     }
@@ -72,12 +72,8 @@ public class RulesTest {
         Cell queriedCell = grid.getCell(new Coordinate(1,1));
         queriedCell.makeCellAlive();
 
-        boolean actual = Rules.calculateCellsNextLife(queriedCell, neighbors);
+        boolean actual = Rules.calculateCellLifeExpectancy(queriedCell, neighbors);
 
         Assert.assertFalse(actual);
     }
-//    live < 2 live neighbors = dead 
-//    live > 3 live neighbors = dead 
-//    live 2 || 3 = live
-//     dead == 3 live neighbors = live
 }

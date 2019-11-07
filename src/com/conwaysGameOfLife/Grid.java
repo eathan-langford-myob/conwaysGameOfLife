@@ -1,5 +1,6 @@
 package com.conwaysGameOfLife;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -87,18 +88,23 @@ public class Grid {
         };
     }
 
-    public Grid getNextStateOfGrid() {
-        Grid newGrid = new Grid(getGridWidth(), getGridHeight());
-        newGrid.getCell(new Coordinate(0,1)).makeCellAlive();
-        newGrid.getCell(new Coordinate(1,1)).makeCellAlive();
-        newGrid.getCell(new Coordinate(2,1)).makeCellAlive();
-        //loop
-        //get cell by coord
-        //check cell neighbors
-        //add coord to array
-        //apply array to new board
-        //return new board
-        return newGrid;
+    public ArrayList<Coordinate> getNextStateOfGrid() {
+        Cell[] cellNeighbors;
+        Cell currentCell;
+        ArrayList<Coordinate> coordinatesOfAliveCellsOnNextState = new ArrayList<>();
+
+        for (int x = 0; x < gridWidth; x++) {
+            for (int y = 0; y < gridHeight; y++) {
+                Coordinate currentCoordinate = new Coordinate(x,y);
+                currentCell = getCell(currentCoordinate);
+                cellNeighbors = getNeighborsOfCell(currentCoordinate);
+
+                if (Rules.calculateCellLifeExpectancy(currentCell, cellNeighbors)) {
+                    coordinatesOfAliveCellsOnNextState.add(currentCoordinate);
+                }
+            }
+        }
+        return coordinatesOfAliveCellsOnNextState;
     }
 
     @Override
