@@ -13,9 +13,9 @@ public class RulesTest {
 
     @Test
     public void shouldReturnNumberOfLiveNeighbors_WhenQueryingRules() {
-        grid.getCell(new Coordinate(1,0)).changeStatus();
-        grid.getCell(new Coordinate(2,0)).changeStatus();
-        grid.getCell(new Coordinate(0,2)).changeStatus();
+        grid.getCell(new Coordinate(1,0)).makeCellAlive();
+        grid.getCell(new Coordinate(2,0)).makeCellAlive();
+        grid.getCell(new Coordinate(0,2)).makeCellAlive();
         neighbors = grid.getNeighborsOfCell(new Coordinate(1,1));
 
         long actual = Rules.getNumberOfLiveCellsFromNeighbors(neighbors);
@@ -26,59 +26,55 @@ public class RulesTest {
 
     @Test
     public void shouldReturnLiveCell_WhenSurroundedBy3LiveCells() {
-        grid.getCell(new Coordinate(1,0)).changeStatus();
-        grid.getCell(new Coordinate(2,2)).changeStatus();
-        grid.getCell(new Coordinate(1,2)).changeStatus();
+        grid.getCell(new Coordinate(1,0)).makeCellAlive();
+        grid.getCell(new Coordinate(2,2)).makeCellAlive();
+        grid.getCell(new Coordinate(1,2)).makeCellAlive();
         neighbors = grid.getNeighborsOfCell(new Coordinate(1,1));
         Cell queriedCell = grid.getCell(new Coordinate(1,1));
 
-        Cell actual = Rules.calculateCellStatus(queriedCell, neighbors);
-        Cell expected = new Cell(true);
+        boolean actual = Rules.calculateCellsNextLife(queriedCell, neighbors);
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertTrue(actual);
     }
 
     @Test
     public void shouldReturnLiveCell_WhenSurroundedBy2LiveCells() {
-        grid.getCell(new Coordinate(1,0)).changeStatus();
-        grid.getCell(new Coordinate(2,0)).changeStatus();
+        grid.getCell(new Coordinate(1,0)).makeCellAlive();
+        grid.getCell(new Coordinate(2,0)).makeCellAlive();
         neighbors = grid.getNeighborsOfCell(new Coordinate(1,1));
         Cell queriedCell = grid.getCell(new Coordinate(1,1));
-        queriedCell.changeStatus();
+        queriedCell.makeCellAlive();
 
-        Cell actual = Rules.calculateCellStatus(queriedCell, neighbors);
-        Cell expected = new Cell(true);
+        boolean actual = Rules.calculateCellsNextLife(queriedCell, neighbors);
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertTrue(actual);
     }
 
     @Test
     public void shouldReturnDeadCell_WhenSurroundedBy4LiveCells() {
-        grid.getCell(new Coordinate(1,0)).changeStatus();
-        grid.getCell(new Coordinate(2,0)).changeStatus();
-        grid.getCell(new Coordinate(2,2)).changeStatus();
-        grid.getCell(new Coordinate(0,1)).changeStatus();
+        grid.getCell(new Coordinate(1,0)).makeCellAlive();
+        grid.getCell(new Coordinate(2,0)).makeCellAlive();
+        grid.getCell(new Coordinate(2,2)).makeCellAlive();
+        grid.getCell(new Coordinate(0,1)).makeCellAlive();
         neighbors = grid.getNeighborsOfCell(new Coordinate(1,1));
         Cell queriedCell = grid.getCell(new Coordinate(1,1));
-        queriedCell.changeStatus();
+        queriedCell.makeCellAlive();
 
-        Cell actual = Rules.calculateCellStatus(queriedCell, neighbors);
-        Cell expected = new Cell(false);
+        boolean actual = Rules.calculateCellsNextLife(queriedCell, neighbors);
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertFalse(actual);
     }
 
     @Test
-    public void shouldReturnDeadCell_WhenSurroundedByLessThan3LiveCells() {
-        grid.getCell(new Coordinate(1,0)).changeStatus();
+    public void shouldReturnFalse_WhenSurroundedByLessThan3LiveCells() {
+        grid.getCell(new Coordinate(1,0)).makeCellAlive();
         neighbors = grid.getNeighborsOfCell(new Coordinate(1,1));
         Cell queriedCell = grid.getCell(new Coordinate(1,1));
-        queriedCell.changeStatus();
+        queriedCell.makeCellAlive();
 
-        Cell actual = Rules.calculateCellStatus(queriedCell, neighbors);
-        Cell expected = new Cell(false);
+        boolean actual = Rules.calculateCellsNextLife(queriedCell, neighbors);
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertFalse(actual);
     }
 //    live < 2 live neighbors = dead 
 //    live > 3 live neighbors = dead 

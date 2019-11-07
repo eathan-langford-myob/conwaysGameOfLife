@@ -1,11 +1,14 @@
 package com.conwaysGameOfLife;
 
-public class Grid {
-    Cell[][] grid;
-    int gridHeight;
-    int gridWidth;
+import java.util.Arrays;
+import java.util.Objects;
 
-    public Grid(int height, int width) {
+public class Grid {
+    private Cell[][] grid;
+    private int gridHeight;
+    private int gridWidth;
+
+    public Grid(int width, int height) {
         this.gridHeight = height;
         this.gridWidth = width;
         this.grid = new Cell[width][height];
@@ -14,6 +17,26 @@ public class Grid {
                 grid[x][y] = new Cell();
             }
         }
+    }
+
+        public Cell[][] setLiveCells(Coordinate[] coordinatesOfLiveCells) {
+        for (Coordinate coordinate : coordinatesOfLiveCells) {
+            getCell(coordinate).makeCellAlive();
+        }
+        return grid;
+    }
+    //keep seperate, run it in factory method. cheers ryan
+    //method to setLiveCells(pass it live cell array)
+    // go through grid
+
+
+
+    public int getGridHeight() {
+        return gridHeight;
+    }
+
+    public int getGridWidth() {
+        return gridWidth;
     }
 
     public Cell getCell(Coordinate coordinate) {
@@ -39,6 +62,9 @@ public class Grid {
         }
         return true;
     }
+    private Cell[][] getGrid() {
+        return grid;
+    }
 
     public Cell[] getNeighborsOfCell(Coordinate coordinate) {
         int x = coordinate.getX();
@@ -59,5 +85,34 @@ public class Grid {
                 getCell(new Coordinate(left, down)),
                 getCell(new Coordinate(left, y))
         };
+    }
+
+    public Grid getNextStateOfGrid() {
+        Grid newGrid = new Grid(getGridWidth(), getGridHeight());
+        newGrid.getCell(new Coordinate(0,1)).makeCellAlive();
+        newGrid.getCell(new Coordinate(1,1)).makeCellAlive();
+        newGrid.getCell(new Coordinate(2,1)).makeCellAlive();
+        //loop
+        //get cell by coord
+        //check cell neighbors
+        //add coord to array
+        //apply array to new board
+        //return new board
+        return newGrid;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Grid grid1 = (Grid) o;
+        return Arrays.deepEquals(this.grid, grid1.grid);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(getGridHeight(), getGridWidth());
+        result = 31 * result + Arrays.hashCode(getGrid());
+        return result;
     }
 }

@@ -26,7 +26,7 @@ Grid firstRowPositionAliveGrid;
     @Test
     public void shouldReturnTrue_WhenQueryingRowWithLiveCells() {
         firstRowPositionAliveGrid = new Grid(3,3);
-        firstRowPositionAliveGrid.getCell(new Coordinate(0,0)).changeStatus();
+        firstRowPositionAliveGrid.getCell(new Coordinate(0,0)).makeCellAlive();
 
         boolean expected = firstRowPositionAliveGrid.rowHasLiveCells(new Coordinate(0,0));
 
@@ -56,4 +56,24 @@ Grid firstRowPositionAliveGrid;
 
         Assert.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldReturnNextStateOfGrid_WhenGridHas3LiveCells() {
+        Grid grid = new Grid(3,3);
+        grid.getCell(new Coordinate(1,0)).makeCellAlive();
+        grid.getCell(new Coordinate(1,1)).makeCellAlive();
+        grid.getCell(new Coordinate(1,2)).makeCellAlive();
+
+        Grid expectedGrid = new Grid(3,3);
+        expectedGrid.getCell(new Coordinate(0,1)).makeCellAlive();
+        expectedGrid.getCell(new Coordinate(1,1)).makeCellAlive();
+        expectedGrid.getCell(new Coordinate(2,1)).makeCellAlive();
+
+        Grid actual = grid.getNextStateOfGrid();
+        Grid expected = expectedGrid;
+
+        Assert.assertEquals(expected, actual);
+    }
+
+
 }

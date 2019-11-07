@@ -30,7 +30,7 @@ public class Cell {
     public boolean isAlive(){
         return isAlive;
     }
-    public void changeStatus() {
-        isAlive = !isAlive;
+    public void makeCellAlive() {
+        this.isAlive = true;
     }
 }

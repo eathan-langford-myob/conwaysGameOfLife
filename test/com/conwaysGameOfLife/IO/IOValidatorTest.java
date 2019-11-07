@@ -1,5 +1,6 @@
 package com.conwaysGameOfLife.IO;
 
+import com.conwaysGameOfLife.*;
 import org.junit.*;
 
 public class IOValidatorTest {
@@ -16,8 +17,16 @@ public class IOValidatorTest {
     }
 
     @Test
-    public void shouldReturnTrueForValidFormatString(){
+    public void shouldReturnTrue_WhenValidFormatString(){
         boolean actual = IOValidator.isValidFormatWithDigits(userInputValidString);
+
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void shouldReturnTrue_WhenIntegersWithinBoundsOfGrid() {
+        Grid grid = new Grid(3,3);
+        boolean actual = IOValidator.isValidInputWithinBoardRange(userInputValidString, grid);
 
         Assert.assertTrue(actual);
     }
