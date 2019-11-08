@@ -2,6 +2,8 @@ package com.conwaysGameOfLife;
 
 import org.junit.*;
 
+import java.util.ArrayList;
+
 public class RulesTest {
     private Grid grid;
     Cell[] neighbors;
@@ -76,4 +78,46 @@ public class RulesTest {
 
         Assert.assertFalse(actual);
     }
+
+
+    @Test
+    public void shouldReturnArrayOfNextGenerationCoordinates_WhenGridHas3LiveCells_PropellerPattern() {
+        Grid grid = new Grid(5,5);
+        grid.getCell(new Coordinate(2,1)).makeCellAlive();
+        grid.getCell(new Coordinate(2,2)).makeCellAlive();
+        grid.getCell(new Coordinate(2,3)).makeCellAlive();
+
+        ArrayList<Coordinate> expectedGrid = new ArrayList<>();
+        expectedGrid.add(new Coordinate(1,2));
+        expectedGrid.add(new Coordinate(2,2));
+        expectedGrid.add(new Coordinate(3,2));
+
+        ArrayList<Coordinate> actual = Rules.getCoordinatesOfNextGenerationsCells(grid);
+        ArrayList<Coordinate> expected = expectedGrid;
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlockPattern() {
+        Grid grid = new Grid(5,5);
+        grid.getCell(new Coordinate(2,1)).makeCellAlive();
+        grid.getCell(new Coordinate(2,2)).makeCellAlive();
+        grid.getCell(new Coordinate(1,1)).makeCellAlive();
+        grid.getCell(new Coordinate(1,2)).makeCellAlive();
+
+        ArrayList<Coordinate> expectedGrid = new ArrayList<>();
+        expectedGrid.add(new Coordinate(2,1));
+        expectedGrid.add(new Coordinate(2,2));
+        expectedGrid.add(new Coordinate(1,1));
+        expectedGrid.add(new Coordinate(1,2));
+
+        ArrayList<Coordinate> actual = Rules.getCoordinatesOfNextGenerationsCells(grid);
+        ArrayList<Coordinate> expected = expectedGrid;
+
+        Assert.assertTrue(actual.containsAll(expected));
+
+    }
+
+
 }

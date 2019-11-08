@@ -59,23 +59,4 @@ Grid firstRowPositionAliveGrid;
         Assert.assertArrayEquals(expected, actual);
     }
 
-    @Test
-    public void shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells() {
-        Grid grid = new Grid(5,5);
-        grid.getCell(new Coordinate(2,1)).makeCellAlive();
-        grid.getCell(new Coordinate(2,2)).makeCellAlive();
-        grid.getCell(new Coordinate(2,3)).makeCellAlive();
-
-        ArrayList<Coordinate> expectedGrid = new ArrayList<>();
-        expectedGrid.add(new Coordinate(1,2));
-        expectedGrid.add(new Coordinate(2,2));
-        expectedGrid.add(new Coordinate(3,2));
-
-        ArrayList<Coordinate> actual = grid.getNextStateOfGrid();
-        ArrayList<Coordinate> expected = expectedGrid;
-
-        Assert.assertEquals(expected, actual);
-    }
-
-
 }

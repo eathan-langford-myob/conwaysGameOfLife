@@ -88,7 +88,7 @@ public class Grid {
         };
     }
 
-    public ArrayList<Coordinate> getNextStateOfGrid() {
+    public ArrayList<Coordinate> getCoordinatesOfNextGenerationsCells() {
         Cell[] cellNeighbors;
         Cell currentCell;
         ArrayList<Coordinate> coordinatesOfAliveCellsOnNextState = new ArrayList<>();

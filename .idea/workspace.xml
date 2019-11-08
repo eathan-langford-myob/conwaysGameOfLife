@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="101412fe-5849-430c-a5d8-cf12413a30e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/conwaysGameOfLife/Render/GridRender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/conwaysGameOfLife/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/conwaysGameOfLife/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/conwaysGameOfLife/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/conwaysGameOfLife/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/conwaysGameOfLife/IO/IOValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/conwaysGameOfLife/IO/IOValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/conwaysGameOfLife/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/conwaysGameOfLife/CellTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/conwaysGameOfLife/GridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/conwaysGameOfLife/GridTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/conwaysGameOfLife/IO/IOValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/conwaysGameOfLife/IO/IOValidatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -43,17 +40,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/CellTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
+            <state relative-caret-position="483">
               <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/CoordinateTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="13" column="132" selection-start-line="13" selection-start-column="132" selection-end-line="13" selection-end-column="132" />
+            <state relative-caret-position="840">
+              <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,23 +59,51 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/LifeValues.java">
+        <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Coordinate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="196">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="e#314#315#0" expanded="true" />
+                <element signature="e#900#901#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#949#950#0" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Grid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="106" selection-start-line="106" selection-end-line="106" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="365">
+              <caret line="117" column="56" lean-forward="true" selection-start-line="117" selection-start-column="56" selection-end-line="117" selection-end-column="56" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#160#161#0" expanded="true" />
                 <element signature="e#196#197#0" expanded="true" />
               </folding>
@@ -87,39 +112,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Render/GridRender.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/GridTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Grid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="105" selection-start-line="105" selection-end-line="105" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1324#1325#0" expanded="true" />
-                <element signature="e#1357#1358#0" expanded="true" />
-                <element signature="e#1390#1391#0" expanded="true" />
-                <element signature="e#1422#1423#0" expanded="true" />
-                <element signature="e#1472#1473#0" expanded="true" />
-                <element signature="e#1537#1538#0" expanded="true" />
-                <element signature="e#1708#1709#0" expanded="true" />
-                <element signature="e#1735#1736#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/IO/IOValidatorTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+            <state relative-caret-position="643">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,6 +140,7 @@
         <option value="Arquillian JUnit Test Class" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -161,16 +167,16 @@
         <option value="$PROJECT_DIR$/src/com/conwaysGameOfLife/Coordinate.java" />
         <option value="$PROJECT_DIR$/src/com/conwaysGameOfLife/LifeValues.java" />
         <option value="$PROJECT_DIR$/src/com/conwaysGameOfLife/IO/IOValidator.java" />
+        <option value="$PROJECT_DIR$/src/com/conwaysGameOfLife/Cell.java" />
         <option value="$PROJECT_DIR$/test/com/conwaysGameOfLife/IO/IOValidatorTest.java" />
         <option value="$PROJECT_DIR$/src/com/conwaysGameOfLife/Grid.java" />
         <option value="$PROJECT_DIR$/test/com/conwaysGameOfLife/GridTest.java" />
-        <option value="$PROJECT_DIR$/src/com/conwaysGameOfLife/Cell.java" />
-        <option value="$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java" />
         <option value="$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java" />
+        <option value="$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="-1920" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
@@ -270,8 +276,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in ConwaysGameOfLife (3)">
-    <configuration name="All in ConwaysGameOfLife (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RulesTest.shouldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlockPattern">
+    <configuration name="All in ConwaysGameOfLife" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ConwaysGameOfLife" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -279,23 +285,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in ConwaysGameOfLife (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ConwaysGameOfLife" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in ConwaysGameOfLife (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ConwaysGameOfLife" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GridTest.shouldReturnNextStateOfGrid_WhenGridHas3LiveCells" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GridTest.shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ConwaysGameOfLife" />
       <extension name="coverage">
         <pattern>
@@ -305,13 +295,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.conwaysGameOfLife" />
       <option name="MAIN_CLASS_NAME" value="com.conwaysGameOfLife.GridTest" />
-      <option name="METHOD_NAME" value="shouldReturnNextStateOfGrid_WhenGridHas3LiveCells" />
+      <option name="METHOD_NAME" value="shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RulesTest.shouldReturnDeadCell_WhenSurroundedByLessThan3LiveCells" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RulesTest.houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ConwaysGameOfLife" />
       <extension name="coverage">
         <pattern>
@@ -321,26 +311,58 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.conwaysGameOfLife" />
       <option name="MAIN_CLASS_NAME" value="com.conwaysGameOfLife.RulesTest" />
-      <option name="METHOD_NAME" value="shouldReturnDeadCell_WhenSurroundedByLessThan3LiveCells" />
+      <option name="METHOD_NAME" value="houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RulesTest.shouldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlockPattern" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ConwaysGameOfLife" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.conwaysGameOfLife.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.conwaysGameOfLife" />
+      <option name="MAIN_CLASS_NAME" value="com.conwaysGameOfLife.RulesTest" />
+      <option name="METHOD_NAME" value="shouldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlockPattern" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RulesTest.shouldReturnFalse_WhenSurroundedByLessThan3LiveCells" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ConwaysGameOfLife" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.conwaysGameOfLife.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.conwaysGameOfLife" />
+      <option name="MAIN_CLASS_NAME" value="com.conwaysGameOfLife.RulesTest" />
+      <option name="METHOD_NAME" value="shouldReturnFalse_WhenSurroundedByLessThan3LiveCells" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.All in ConwaysGameOfLife (1)" />
-      <item itemvalue="JUnit.GridTest.shouldReturnNextStateOfGrid_WhenGridHas3LiveCells" />
-      <item itemvalue="JUnit.All in ConwaysGameOfLife (2)" />
-      <item itemvalue="JUnit.RulesTest.shouldReturnDeadCell_WhenSurroundedByLessThan3LiveCells" />
-      <item itemvalue="JUnit.All in ConwaysGameOfLife (3)" />
+      <item itemvalue="JUnit.RulesTest.shouldReturnFalse_WhenSurroundedByLessThan3LiveCells" />
+      <item itemvalue="JUnit.GridTest.shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells" />
+      <item itemvalue="JUnit.All in ConwaysGameOfLife" />
+      <item itemvalue="JUnit.RulesTest.houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock" />
+      <item itemvalue="JUnit.RulesTest.shouldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlockPattern" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in ConwaysGameOfLife (3)" />
-        <item itemvalue="JUnit.RulesTest.shouldReturnDeadCell_WhenSurroundedByLessThan3LiveCells" />
-        <item itemvalue="JUnit.All in ConwaysGameOfLife (2)" />
-        <item itemvalue="JUnit.GridTest.shouldReturnNextStateOfGrid_WhenGridHas3LiveCells" />
-        <item itemvalue="JUnit.All in ConwaysGameOfLife (1)" />
+        <item itemvalue="JUnit.RulesTest.shouldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlockPattern" />
+        <item itemvalue="JUnit.RulesTest.houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock" />
+        <item itemvalue="JUnit.All in ConwaysGameOfLife" />
+        <item itemvalue="JUnit.GridTest.shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells" />
+        <item itemvalue="JUnit.RulesTest.shouldReturnFalse_WhenSurroundedByLessThan3LiveCells" />
       </list>
     </recent_temporary>
   </component>
@@ -421,47 +443,60 @@
       <option name="project" value="LOCAL" />
       <updated>1572496217825</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="solved test for IO Validator, refactored rules to eliminate ENUMS">
+      <created>1573094959582</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1573094959584</updated>
+    </task>
+    <task id="LOCAL-00011" summary="solved test for getting array of coordinates for next state of board">
+      <created>1573103195388</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1573103195388</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_ConwaysGameOfLife_(3) - 2019.11.07 at 11h 46m 35s.xml">
-      <configuration name="All in ConwaysGameOfLife (3)" configurationId="JUnit" />
+    <history-entry file="GridTest_shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells - 2019.11.07 at 15h 51m 10s.xml">
+      <configuration name="GridTest.shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ConwaysGameOfLife_(3) - 2019.11.07 at 11h 47m 00s.xml">
-      <configuration name="All in ConwaysGameOfLife (3)" configurationId="JUnit" />
+    <history-entry file="GridTest_shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells - 2019.11.07 at 15h 51m 14s.xml">
+      <configuration name="GridTest.shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ConwaysGameOfLife_(3) - 2019.11.07 at 11h 48m 12s.xml">
-      <configuration name="All in ConwaysGameOfLife (3)" configurationId="JUnit" />
+    <history-entry file="GridTest_shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells - 2019.11.07 at 15h 54m 51s.xml">
+      <configuration name="GridTest.shouldReturnArrayOfNextStateCoordinates_WhenGridHas3LiveCells" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ConwaysGameOfLife_(3) - 2019.11.07 at 11h 48m 17s.xml">
-      <configuration name="All in ConwaysGameOfLife (3)" configurationId="JUnit" />
+    <history-entry file="All_in_ConwaysGameOfLife - 2019.11.07 at 16h 05m 58s.xml">
+      <configuration name="All in ConwaysGameOfLife" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ConwaysGameOfLife_(3) - 2019.11.07 at 11h 48m 30s.xml">
-      <configuration name="All in ConwaysGameOfLife (3)" configurationId="JUnit" />
+    <history-entry file="RulesTest_houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock - 2019.11.08 at 10h 53m 05s.xml">
+      <configuration name="RulesTest.houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ConwaysGameOfLife_(3) - 2019.11.07 at 11h 50m 17s.xml">
-      <configuration name="All in ConwaysGameOfLife (3)" configurationId="JUnit" />
+    <history-entry file="RulesTest_houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock - 2019.11.08 at 10h 55m 56s.xml">
+      <configuration name="RulesTest.houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ConwaysGameOfLife_(3) - 2019.11.07 at 11h 52m 47s.xml">
-      <configuration name="All in ConwaysGameOfLife (3)" configurationId="JUnit" />
+    <history-entry file="RulesTest_houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock - 2019.11.08 at 10h 55m 57s.xml">
+      <configuration name="RulesTest.houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ConwaysGameOfLife_(3) - 2019.11.07 at 11h 52m 56s.xml">
-      <configuration name="All in ConwaysGameOfLife (3)" configurationId="JUnit" />
+    <history-entry file="RulesTest_houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock - 2019.11.08 at 12h 39m 01s.xml">
+      <configuration name="RulesTest.houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ConwaysGameOfLife_(3) - 2019.11.07 at 11h 52m 58s.xml">
-      <configuration name="All in ConwaysGameOfLife (3)" configurationId="JUnit" />
+    <history-entry file="RulesTest_houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock - 2019.11.08 at 12h 40m 12s.xml">
+      <configuration name="RulesTest.houldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlock" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ConwaysGameOfLife_(3) - 2019.11.07 at 13h 47m 39s.xml">
-      <configuration name="All in ConwaysGameOfLife (3)" configurationId="JUnit" />
+    <history-entry file="RulesTest_shouldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlockPattern - 2019.11.08 at 13h 14m 14s.xml">
+      <configuration name="RulesTest.shouldReturnArrayOfSameCoordinates_WhenGridHas4LiveCells_StillLifeBlockPattern" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51146000" />
+    <option name="totallyTimeSpent" value="61635000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1920" y="0" width="1920" height="1080" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13844515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -472,9 +507,9 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="0" weight="0.32997987" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32997987" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49520767" weight="0.305835" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.49893504" visible="true" weight="0.53621733" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49893504" weight="0.53621733" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -484,7 +519,7 @@
       <window_info anchor="bottom" id="Event Log" order="11" show_stripe_button="false" sideWeight="0.5058573" side_tool="true" weight="0.3189135" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49840257" weight="0.32897383" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.4941427" weight="0.3189135" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="14" sideWeight="0.4941427" visible="true" weight="0.3189135" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -534,25 +569,26 @@
     <MESSAGE value="add test for calculating a cells state based on neighbors rule" />
     <MESSAGE value="solved test for rules behaviour" />
     <MESSAGE value="added test for IOValidator class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test for IOValidator class" />
+    <MESSAGE value="solved test for IO Validator, refactored rules to eliminate ENUMS" />
+    <MESSAGE value="solved test for getting array of coordinates for next state of board" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved test for getting array of coordinates for next state of board" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java</url>
-          <line>74</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java</url>
-          <line>47</line>
+          <line>49</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="grid" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/GridTest.java" />
@@ -570,27 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="177" selection-start-line="177" selection-end-line="177" />
-          <folding>
-            <element signature="e#6484#6648#0" expanded="true" />
-            <element signature="e#6647#6648#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/CoordinateTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2772">
@@ -604,30 +619,6 @@
           <caret line="5613" selection-start-line="5613" selection-end-line="5613" />
           <folding>
             <element signature="e#249923#249924#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Coordinate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-147">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/IO/IOValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/IO/IOValidatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -653,53 +644,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/LifeValues.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="273">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#314#315#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/GridTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/IO/IOValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="273">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/IO/IOValidatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="28" column="53" lean-forward="true" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/CellTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
+        <state relative-caret-position="483">
           <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1324#1325#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1390#1391#0" expanded="true" />
-            <element signature="e#1422#1423#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1537#1538#0" expanded="true" />
-            <element signature="e#1708#1709#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -717,22 +692,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/LifeValues.java">
+    <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/GridTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="643">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
-            <element signature="e#314#315#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/CoordinateTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Coordinate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#900#901#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1791">
+          <caret line="202" selection-start-line="202" selection-end-line="202" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Render/GridRender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/conwaysGameOfLife/Rules.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="13" column="132" selection-start-line="13" selection-start-column="132" selection-end-line="13" selection-end-column="132" />
+        <state relative-caret-position="208">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/conwaysGameOfLife/RulesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="117" column="56" lean-forward="true" selection-start-line="117" selection-start-column="56" selection-end-line="117" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#160#161#0" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
           </folding>
         </state>
       </provider>
