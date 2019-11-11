@@ -2,6 +2,8 @@ package com.conwaysGameOfLife;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Rules {
     private static int[] liveCellNeighborsToLive = {2,3};
@@ -35,6 +37,11 @@ public class Rules {
                 }
             }
         }
+        coordinatesOfAliveCellsOnNextState.sort(Comparator.comparing(Coordinate::getX));
         return coordinatesOfAliveCellsOnNextState;
+    }
+
+    public static Grid tick(Grid grid) {
+        return new Grid(grid.getGridWidth(), grid.getGridHeight());
     }
 }
