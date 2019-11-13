@@ -9,7 +9,7 @@ public ConsoleInputMock(String input) {
 
 
 @Override
-public String getInput() {
+public String nextLine() {
         return mockInput;
         }
         }

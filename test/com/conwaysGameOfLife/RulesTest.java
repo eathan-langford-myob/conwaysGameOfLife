@@ -95,7 +95,6 @@ public class RulesTest {
         expectedGrid.add(new Coordinate(3, 2));
         expectedGrid.sort(Comparator.comparing(Coordinate::getX));
 
-
         ArrayList<Coordinate> actual = Rules.getCoordinatesOfNextGenerationsCells(grid);
         ArrayList<Coordinate> expected = expectedGrid;
 
@@ -117,14 +116,9 @@ public class RulesTest {
         expectedGrid.add(new Coordinate(1, 2));
         expectedGrid.sort(Comparator.comparing(Coordinate::getX));
 
-
         ArrayList<Coordinate> actual = Rules.getCoordinatesOfNextGenerationsCells(grid);
         ArrayList<Coordinate> expected = expectedGrid;
 
-//        boolean contentsOfArrayEqual = actual.containsAll(expected);
-//        boolean sizeOfArrayEqual = actual.size() == expected.size();
-//
-//        Assert.assertTrue(contentsOfArrayEqual && sizeOfArrayEqual);
         Assert.assertEquals(expected, actual);
     }
 

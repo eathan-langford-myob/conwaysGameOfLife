@@ -22,11 +22,10 @@ public class GridStringRender implements GridRender {
     }
 
     private void parseCellToString(Cell currentCell) {
-        if (currentCell.isAlive()) {
-            parsedBoard.append(gridSymbols.LIVECELL.picture);
-        } else {
-            parsedBoard.append(gridSymbols.DEADCELL.picture);
-        }
+        gridSymbols calculateCellToString = currentCell.isAlive() ? gridSymbols.LIVECELL : gridSymbols.DEADCELL;
+
+            parsedBoard.append(gridSymbols.SPACE.value);
+            parsedBoard.append(calculateCellToString.value);
     }
 
 }
