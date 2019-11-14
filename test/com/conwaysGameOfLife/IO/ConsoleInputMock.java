@@ -12,4 +12,9 @@ public ConsoleInputMock(String input) {
 public String nextLine() {
         return mockInput;
         }
+
+        @Override
+        public void prompt() {
+
         }
+}

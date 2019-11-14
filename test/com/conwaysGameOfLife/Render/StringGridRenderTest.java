@@ -35,9 +35,9 @@ public class StringGridRenderTest {
     public void shouldReturnBoardWithLiveCells_WhenPropellorPatternIsSet() {
         GridRender boardRenderer = new GridStringRender();
         Grid gridWithPropellorPattern = new Grid(5, 5);
-        gridWithPropellorPattern.getCell(new Coordinate(2, 1)).makeCellAlive();
-        gridWithPropellorPattern.getCell(new Coordinate(2, 2)).makeCellAlive();
-        gridWithPropellorPattern.getCell(new Coordinate(2, 3)).makeCellAlive();
+        gridWithPropellorPattern.getCellByCoordinate(new Coordinate(2, 1)).makeCellAlive();
+        gridWithPropellorPattern.getCellByCoordinate(new Coordinate(2, 2)).makeCellAlive();
+        gridWithPropellorPattern.getCellByCoordinate(new Coordinate(2, 3)).makeCellAlive();
 
 
         String actual = boardRenderer.renderGrid(gridWithPropellorPattern);

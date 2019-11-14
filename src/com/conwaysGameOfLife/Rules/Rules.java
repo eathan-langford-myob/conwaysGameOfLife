@@ -1,24 +1,27 @@
-package com.conwaysGameOfLife;
+package com.conwaysGameOfLife.Rules;
+
+import com.conwaysGameOfLife.Cell;
+import com.conwaysGameOfLife.Coordinate;
+import com.conwaysGameOfLife.Grid;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class Rules {
-    private static int[] liveCellNeighborsToLive = {2,3};
-    private static int deadCellNeighborsToLive = 3;
+
 
     public static long getNumberOfLiveCellsFromNeighbors(Cell[] neighbors) {
-        return Arrays.stream(neighbors).filter(Cell::isAlive).count();
+        return Arrays.stream(neighbors)
+                .filter(Cell::isAlive)
+                .count();
     }
 
     public static boolean calculateCellLifeExpectancy(Cell currentCell, Cell[] neighbors) {
-            long liveCellNeighborsCount = getNumberOfLiveCellsFromNeighbors(neighbors);
+        long liveCellNeighborsCount = getNumberOfLiveCellsFromNeighbors(neighbors);
 
-            return currentCell.isAlive() ?
-                    liveCellNeighborsCount == liveCellNeighborsToLive[0] || liveCellNeighborsCount == liveCellNeighborsToLive[1] :
-                    liveCellNeighborsCount == deadCellNeighborsToLive;
+        return currentCell.isAlive() ?
+                CellLifeRules.LIVECELL.valuesForLife(liveCellNeighborsCount) :
+                CellLifeRules.DEADCELL.valuesForLife(liveCellNeighborsCount);
     }
 
     public static ArrayList<Coordinate> getCoordinatesOfNextGenerationsCells(Grid grid) {
@@ -28,8 +31,8 @@ public class Rules {
 
         for (int x = 0; x < grid.getGridWidth(); x++) {
             for (int y = 0; y < grid.getGridHeight(); y++) {
-                Coordinate currentCoordinate = new Coordinate(x,y);
-                currentCell = grid.getCell(currentCoordinate);
+                Coordinate currentCoordinate = new Coordinate(x, y);
+                currentCell = grid.getCellByCoordinate(currentCoordinate);
                 cellNeighbors = grid.getNeighborsOfCell(currentCoordinate);
 
                 if (Rules.calculateCellLifeExpectancy(currentCell, cellNeighbors)) {
@@ -37,11 +40,7 @@ public class Rules {
                 }
             }
         }
-        coordinatesOfAliveCellsOnNextState.sort(Comparator.comparing(Coordinate::getX));
+//        coordinatesOfAliveCellsOnNextState.sort(Comparator.comparing(Coordinate::getX));
         return coordinatesOfAliveCellsOnNextState;
-    }
-
-    public static Grid tick(Grid grid) {
-        return new Grid(grid.getGridWidth(), grid.getGridHeight());
     }
 }

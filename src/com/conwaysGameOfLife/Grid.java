@@ -1,5 +1,7 @@
 package com.conwaysGameOfLife;
 
+import com.conwaysGameOfLife.Rules.Rules;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
@@ -20,16 +22,12 @@ public class Grid {
         }
     }
 
-        public Cell[][] setLiveCells(Coordinate[] coordinatesOfLiveCells) {
+    public Cell[][] setLiveCells(ArrayList<Coordinate> coordinatesOfLiveCells) {
         for (Coordinate coordinate : coordinatesOfLiveCells) {
-            getCell(coordinate).makeCellAlive();
+            getCellByCoordinate(coordinate).makeCellAlive();
         }
         return grid;
     }
-    //keep seperate, run it in factory method. cheers ryan
-    //method to setLiveCells(pass it live cell array)
-    // go through grid
-
 
 
     public int getGridHeight() {
@@ -40,14 +38,14 @@ public class Grid {
         return gridWidth;
     }
 
-    public Cell getCell(Coordinate coordinate) {
+    public Cell getCellByCoordinate(Coordinate coordinate) {
         return grid[coordinate.getX()][coordinate.getY()];
     }
 
     public boolean rowHasLiveCells(Coordinate coordinates) {
-        if (coordinates.getX() <= gridWidth-1){
-            Cell currentCell = getCell(coordinates);
-            if (currentCell.isAlive()){
+        if (coordinates.getX() <= gridWidth - 1) {
+            Cell currentCell = getCellByCoordinate(coordinates);
+            if (currentCell.isAlive()) {
                 return true;
             }
             rowHasLiveCells(coordinates.incrementX());
@@ -57,14 +55,23 @@ public class Grid {
 
     public boolean isEmpty() {
         for (int y = 1; y < gridHeight; y++) {
-            if (rowHasLiveCells(new Coordinate(0,y))) {
+            if (rowHasLiveCells(new Coordinate(0, y))) {
                 return false;
             }
         }
         return true;
     }
+
     private Cell[][] getGrid() {
         return grid;
+    }
+
+    public void clear() {
+        for (Cell[] column : grid) {
+            for (Cell cell : column) {
+                cell = new Cell();
+            }
+        }
     }
 
     public Cell[] getNeighborsOfCell(Coordinate coordinate) {
@@ -77,14 +84,14 @@ public class Grid {
 
 
         return new Cell[]{
-                getCell(new Coordinate(left, up)),
-                getCell(new Coordinate(x, up)),
-                getCell(new Coordinate(right, up)),
-                getCell(new Coordinate(right, y)),
-                getCell(new Coordinate(right, down)),
-                getCell(new Coordinate(x, down)),
-                getCell(new Coordinate(left, down)),
-                getCell(new Coordinate(left, y))
+                getCellByCoordinate(new Coordinate(left, up)),
+                getCellByCoordinate(new Coordinate(x, up)),
+                getCellByCoordinate(new Coordinate(right, up)),
+                getCellByCoordinate(new Coordinate(right, y)),
+                getCellByCoordinate(new Coordinate(right, down)),
+                getCellByCoordinate(new Coordinate(x, down)),
+                getCellByCoordinate(new Coordinate(left, down)),
+                getCellByCoordinate(new Coordinate(left, y))
         };
     }
 
@@ -95,8 +102,8 @@ public class Grid {
 
         for (int x = 0; x < gridWidth; x++) {
             for (int y = 0; y < gridHeight; y++) {
-                Coordinate currentCoordinate = new Coordinate(x,y);
-                currentCell = getCell(currentCoordinate);
+                Coordinate currentCoordinate = new Coordinate(x, y);
+                currentCell = getCellByCoordinate(currentCoordinate);
                 cellNeighbors = getNeighborsOfCell(currentCoordinate);
 
                 if (Rules.calculateCellLifeExpectancy(currentCell, cellNeighbors)) {

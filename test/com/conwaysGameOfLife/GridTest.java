@@ -2,8 +2,6 @@ package com.conwaysGameOfLife;
 
 import org.junit.*;
 
-import java.util.ArrayList;
-
 public class GridTest {
 Grid emptyGrid;
 Grid firstRowPositionAliveGrid;
@@ -11,11 +9,14 @@ Grid firstRowPositionAliveGrid;
     @Before
     public void setUp() {
         emptyGrid = new Grid(3,5);
-
+        firstRowPositionAliveGrid = new Grid(3,3);
+        firstRowPositionAliveGrid.getCellByCoordinate(new Coordinate(0,0)).makeCellAlive();
     }
 
     @After
     public void tearDown() {
+        emptyGrid = null;
+        firstRowPositionAliveGrid = null;
     }
 
     @Test
@@ -28,7 +29,7 @@ Grid firstRowPositionAliveGrid;
     @Test
     public void shouldReturnTrue_WhenQueryingRowWithLiveCells() {
         firstRowPositionAliveGrid = new Grid(3,3);
-        firstRowPositionAliveGrid.getCell(new Coordinate(0,0)).makeCellAlive();
+        firstRowPositionAliveGrid.getCellByCoordinate(new Coordinate(0,0)).makeCellAlive();
 
         boolean expected = firstRowPositionAliveGrid.rowHasLiveCells(new Coordinate(0,0));
 
@@ -37,7 +38,7 @@ Grid firstRowPositionAliveGrid;
 
     @Test
     public void shouldReturnFalseForIndividualCellStatus_WhenQueriedFromGrid() {
-        boolean actual = emptyGrid.getCell(new Coordinate(1,1)).isAlive();
+        boolean actual = emptyGrid.getCellByCoordinate(new Coordinate(1,1)).isAlive();
 
         Assert.assertFalse(actual);
     }
@@ -46,17 +47,24 @@ Grid firstRowPositionAliveGrid;
     public void shouldReturnArrayOfCellsNeighbors_WhenGivenACoordinate() {
         Cell[] actual = emptyGrid.getNeighborsOfCell(new Coordinate(1,1));
         Cell[] expected = {
-                emptyGrid.getCell(new Coordinate(0,0)),
-                emptyGrid.getCell(new Coordinate(1,0)),
-                emptyGrid.getCell(new Coordinate(2,0)),
-                emptyGrid.getCell(new Coordinate(2,1)),
-                emptyGrid.getCell(new Coordinate(2,2)),
-                emptyGrid.getCell(new Coordinate(1,2)),
-                emptyGrid.getCell(new Coordinate(0,2)),
-                emptyGrid.getCell(new Coordinate(0,1)),
+                emptyGrid.getCellByCoordinate(new Coordinate(0,0)),
+                emptyGrid.getCellByCoordinate(new Coordinate(1,0)),
+                emptyGrid.getCellByCoordinate(new Coordinate(2,0)),
+                emptyGrid.getCellByCoordinate(new Coordinate(2,1)),
+                emptyGrid.getCellByCoordinate(new Coordinate(2,2)),
+                emptyGrid.getCellByCoordinate(new Coordinate(1,2)),
+                emptyGrid.getCellByCoordinate(new Coordinate(0,2)),
+                emptyGrid.getCellByCoordinate(new Coordinate(0,1)),
                 };
 
         Assert.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void shouldMakeBoardEmpty_WhenClearingBoard() {
+        firstRowPositionAliveGrid.clear();
+        boolean expected = firstRowPositionAliveGrid.isEmpty();
+
+        Assert.assertTrue(expected);
+    }
 }

@@ -28,27 +28,4 @@ public class ConsoleInputTest {
 
         Assert.assertEquals(expected, actual);
     }
-
-    @Test
-    public void shouldReturnSingleParsedCoordinate_WhenGivenString() {
-        String userInput = "3,2";
-
-        Coordinate actual = input.parseSingleCoordinate(userInput);
-        Coordinate expected = new Coordinate(3,2);
-
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldReturnCoordinateArrayOfUserInput_WhenParsed() {
-        ArrayList<Coordinate> arrayOfCoordinates = new ArrayList<>();
-        arrayOfCoordinates.add(new Coordinate(2, 2));
-        arrayOfCoordinates.add(new Coordinate(3, 3));
-
-        ArrayList<Coordinate> actual = input.parseUserInputToCoordinates("2,2/3,3");
-        ArrayList<Coordinate> expected = arrayOfCoordinates;
-
-        Assert.assertEquals(expected, actual);
-    }
-
 }
