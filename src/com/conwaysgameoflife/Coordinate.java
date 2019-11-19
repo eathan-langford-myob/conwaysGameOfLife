@@ -1,4 +1,4 @@
-package com.conwaysGameOfLife;
+package com.conwaysgameoflife;
 
 import java.util.Objects;
 
@@ -31,11 +31,11 @@ public class Coordinate {
     }
 
     public Coordinate incrementX() {
-        return new Coordinate(x+1, y);
+        return new Coordinate(x + 1, y);
     }
 
     public Coordinate incrementY() {
-        return new Coordinate(x, y+1);
+        return new Coordinate(x, y + 1);
     }
 
     public int getY() {

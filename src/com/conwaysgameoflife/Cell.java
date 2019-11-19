@@ -1,5 +1,4 @@
-
-package com.conwaysGameOfLife;
+package com.conwaysgameoflife;
 
 import java.util.Objects;
 
@@ -8,6 +7,10 @@ public class Cell {
 
     public Cell() {
         this.isAlive = false;
+    }
+
+    public Cell(boolean isAlive) {
+        this.isAlive = isAlive;
     }
 
     @Override
@@ -23,14 +26,11 @@ public class Cell {
         return Objects.hash(isAlive());
     }
 
-    public Cell(boolean isAlive) {
-        this.isAlive = isAlive;
-    }
-
-    public boolean isAlive(){
+    public boolean isAlive() {
         return isAlive;
     }
-    public void makeAlive() {
-        isAlive = !isAlive;
+
+    public void makeCellAlive() {
+        this.isAlive = true;
     }
 }

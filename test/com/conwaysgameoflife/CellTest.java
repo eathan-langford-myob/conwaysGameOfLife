@@ -1,4 +1,4 @@
-package com.conwaysGameOfLife;
+package com.conwaysgameoflife;
 
 
 import org.junit.*;
@@ -35,7 +35,7 @@ public class CellTest {
     @Test
     public void shouldReturnLiveCell_WhenStatusSwitchingDeadCell() {
         Cell deadCell = new Cell(false);
-        deadCell.makeAlive();
+        deadCell.makeCellAlive();
         boolean expected = deadCell.isAlive();
 
         Assert.assertTrue(expected);

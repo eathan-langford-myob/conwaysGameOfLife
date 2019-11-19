@@ -1,4 +1,4 @@
-package com.conwaysGameOfLife;
+package com.conwaysgameoflife;
 
 import org.junit.Test;
 
