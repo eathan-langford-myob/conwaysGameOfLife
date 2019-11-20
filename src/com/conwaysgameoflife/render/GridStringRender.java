@@ -1,8 +1,8 @@
 package com.conwaysgameoflife.render;
 
-import com.conwaysgameoflife.Cell;
-import com.conwaysgameoflife.Coordinate;
-import com.conwaysgameoflife.Grid;
+import com.conwaysgameoflife.grid.Cell;
+import com.conwaysgameoflife.grid.Coordinate;
+import com.conwaysgameoflife.grid.Grid;
 
 public class GridStringRender implements GridRender {
     private StringBuilder parsedBoard = new StringBuilder();
@@ -12,9 +12,10 @@ public class GridStringRender implements GridRender {
     public String renderGrid(Grid grid) {
         for (int y = 0; y < grid.getGridHeight(); y++) {
             for (int x = 0; x < grid.getGridWidth(); x++) {
-                Coordinate currentCoordinate = new Coordinate(x, y);
-                Cell currentCell = grid.getCellByCoordinate(currentCoordinate);
+                Cell currentCell = grid.getCellByCoordinate(new Coordinate(x, y));
                 parseCellToString(currentCell);
+                parsedBoard.append(gridSymbols.SPACE.value);
+
             }
             parsedBoard.append("\n");
         }
@@ -23,8 +24,6 @@ public class GridStringRender implements GridRender {
 
     private void parseCellToString(Cell currentCell) {
         gridSymbols calculateCellToString = currentCell.isAlive() ? gridSymbols.LIVECELL : gridSymbols.DEADCELL;
-
-        parsedBoard.append(gridSymbols.SPACE.value);
         parsedBoard.append(calculateCellToString.value);
     }
 

@@ -1,4 +1,4 @@
-package com.conwaysgameoflife;
+package com.conwaysgameoflife.grid;
 
 import java.util.Objects;
 
@@ -11,11 +11,6 @@ public class Coordinate {
         this.y = y;
     }
 
-    public Coordinate(Coordinate coordinate) {
-        this.x = coordinate.getX();
-        this.y = coordinate.getY();
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -23,11 +18,6 @@ public class Coordinate {
         Coordinate that = (Coordinate) o;
         return getX() == that.getX() &&
                 getY() == that.getY();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getX(), getY());
     }
 
     public Coordinate incrementX() {

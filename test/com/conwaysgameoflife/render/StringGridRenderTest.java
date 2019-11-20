@@ -1,8 +1,11 @@
 package com.conwaysgameoflife.render;
 
-import com.conwaysgameoflife.Coordinate;
-import com.conwaysgameoflife.Grid;
-import org.junit.*;
+import com.conwaysgameoflife.grid.Coordinate;
+import com.conwaysgameoflife.grid.Grid;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class StringGridRenderTest {
 
@@ -22,11 +25,11 @@ public class StringGridRenderTest {
 
         String actual = boardRenderer.renderGrid(emptyGrid);
         String expected =
-                "  ▢  ▢  ▢  ▢  ▢\n" +
-                        "  ▢  ▢  ▢  ▢  ▢\n" +
-                        "  ▢  ▢  ▢  ▢  ▢\n" +
-                        "  ▢  ▢  ▢  ▢  ▢\n" +
-                        "  ▢  ▢  ▢  ▢  ▢\n";
+                "▢  ▢  ▢  ▢  ▢  \n" +
+                        "▢  ▢  ▢  ▢  ▢  \n" +
+                        "▢  ▢  ▢  ▢  ▢  \n" +
+                        "▢  ▢  ▢  ▢  ▢  \n" +
+                        "▢  ▢  ▢  ▢  ▢  \n";
 
         Assert.assertEquals(expected, actual);
     }
@@ -42,11 +45,11 @@ public class StringGridRenderTest {
 
         String actual = boardRenderer.renderGrid(gridWithPropellorPattern);
         String expected =
-                        "  ▢  ▢  ▢  ▢  ▢\n" +
-                                "  ▢  ▢  ▣  ▢  ▢\n" +
-                                "  ▢  ▢  ▣  ▢  ▢\n" +
-                                "  ▢  ▢  ▣  ▢  ▢\n" +
-                                "  ▢  ▢  ▢  ▢  ▢\n";
+                        "▢  ▢  ▢  ▢  ▢  \n" +
+                        "▢  ▢  ▣  ▢  ▢  \n" +
+                        "▢  ▢  ▣  ▢  ▢  \n" +
+                        "▢  ▢  ▣  ▢  ▢  \n" +
+                        "▢  ▢  ▢  ▢  ▢  \n";
 
         Assert.assertEquals(expected, actual);
     }
