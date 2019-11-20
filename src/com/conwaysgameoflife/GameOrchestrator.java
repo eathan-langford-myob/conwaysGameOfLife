@@ -1,7 +1,9 @@
 package com.conwaysgameoflife;
 
+import com.conwaysgameoflife.grid.Coordinate;
+import com.conwaysgameoflife.grid.Grid;
+import com.conwaysgameoflife.io.GridInputValidator;
 import com.conwaysgameoflife.io.IInput;
-import com.conwaysgameoflife.io.IOValidator;
 import com.conwaysgameoflife.io.IOutput;
 import com.conwaysgameoflife.io.InputParser;
 import com.conwaysgameoflife.render.GridRender;
@@ -9,131 +11,118 @@ import com.conwaysgameoflife.render.GridRender;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
+
+//RESOURCE BUNDLES DONT NEED TO RECOMPILE
 
 
 public class GameOrchestrator {
     private IInput input;
     private IOutput output;
     private GridRender renderer;
-    private InputParser parse;
-    private ResourceBundle messages;
+    private InputParser parser;
+    private ResourceBundle outputMessages;
     private Grid grid;
-    private ArrayList<Coordinate> nextGridState;
 
-    public GameOrchestrator(IInput input, IOutput output, GridRender renderer, InputParser parse) {
+    public GameOrchestrator(IInput input, IOutput output, GridRender renderer, InputParser parser) {
         this.input = input;
         this.output = output;
         this.renderer = renderer;
-        this.parse = parse;
+        this.parser = parser;
         Locale locale = new Locale("en", "US");
-        this.messages = ResourceBundle.getBundle("com.conwaysgameoflife.io.OutputMessages", locale);
+        this.outputMessages = ResourceBundle.getBundle("com.conwaysgameoflife.io.OutputMessages", locale);
     }
 
-    private void welcome() {
-        output.displayOutput(messages.getString("welcome_message"));
-        output.displayOutput(messages.getString("tell_rules"));
-        output.displayOutput(messages.getString("underpopulation"));
-        output.displayOutput(messages.getString("overcrowding"));
-        output.displayOutput(messages.getString("next_generation"));
-        output.displayOutput(messages.getString("resurrect"));
-        output.displayOutput(messages.getString("generation_limit"));
-        output.displayOutput(messages.getString("press_enter"));
+    private void outputWelcomeMessage() {
+        output.displayOutput(outputMessages.getString("welcome_message"));
+        output.displayOutput(outputMessages.getString("tell_rules"));
+        output.displayOutput(outputMessages.getString("rule_underpopulation"));
+        output.displayOutput(outputMessages.getString("rule_overcrowding"));
+        output.displayOutput(outputMessages.getString("rule_next_generation"));
+        output.displayOutput(outputMessages.getString("rule_resurrect"));
+        output.displayOutput(outputMessages.getString("generation_limit"));
+        output.displayOutput(outputMessages.getString("press_enter"));
     }
 
-    private void askForGridConfiguration() {
-        output.displayOutput(messages.getString("ask_to_seed_grid"));
-        output.displayOutput(messages.getString("tell_format"));
-    }
-
-    private int validationLoopForBoardDimensionSetting() {
+    private int getValidBoardDimension() {
         boolean validBoardDimension = false;
-        String singleDigitAsString = "";
+        String positiveIntegerAsString = "";
 
         while (!validBoardDimension) {
-            singleDigitAsString = input.nextLine();
-            validBoardDimension = IOValidator.validateSingleIntegerForBoardDimensions(singleDigitAsString);
-            output.displayOutput(messages.getString((validBoardDimension ? "confirm_single_digit" : "invalid_entry")));
+            positiveIntegerAsString = input.nextLine();
+            validBoardDimension = GridInputValidator.isPositiveInteger(positiveIntegerAsString);
+            output.displayOutput(outputMessages.getString((validBoardDimension ? "confirm_positive_digit" : "invalid_entry")));
         }
-        return Integer.parseInt(singleDigitAsString);
+        return Integer.parseInt(positiveIntegerAsString);
     }
 
-    private Grid askForGridSize() {
-        output.clearOutput();
-        output.displayOutput(messages.getString("size_of_grid"));
+    private Grid getInitialisedGrid() {
+        output.displayOutput(outputMessages.getString("clearConsole"));
+        output.displayOutput(outputMessages.getString("size_of_grid"));
 
-        output.displayOutput(messages.getString("width"));
-        int gridWidth = validationLoopForBoardDimensionSetting();
+        output.displayOutput(outputMessages.getString("ask_for_width"));
+        int gridWidth = getValidBoardDimension();
 
-        output.displayOutput(messages.getString("height"));
-        int gridHeight = validationLoopForBoardDimensionSetting();
+        output.displayOutput(outputMessages.getString("ask_for_height"));
+        int gridHeight = getValidBoardDimension();
 
-        output.clearOutput();
+        output.displayOutput(outputMessages.getString("clearConsole"));
         return new Grid(gridWidth, gridHeight);
     }
 
 
-    private ArrayList<Coordinate> getGridConfiguration() {
-        boolean validInput = false;
+    private ArrayList<Coordinate> getCoordinatesOfLiveCellsFromInput() {
+        boolean isValidInput = false;
         String userGivenCoordinates = "";
-        while (!validInput) {
-            output.displayOutput(messages.getString("ask_for_input"));
+
+        while (!isValidInput) {
+            output.displayOutput(outputMessages.getString("ask_for_input"));
             userGivenCoordinates = input.nextLine();
-            validInput = IOValidator.validateUserInput(userGivenCoordinates, grid.getGridWidth(), grid.getGridHeight());
-            output.displayOutput(messages.getString((validInput ? "confirm_input" : "invalid_entry")));
+            isValidInput = GridInputValidator.isValidFormat(userGivenCoordinates, grid.getGridWidth(), grid.getGridHeight());
+            output.displayOutput(outputMessages.getString((isValidInput ? "confirm_input" : "invalid_entry")));
         }
-        return parse.parseUserInputToCoordinates(userGivenCoordinates);
+        return parser.parseUserInputToCoordinates(userGivenCoordinates);
     }
 
-    private Grid setUp() {
-        welcome();
-        input.prompt();
-        output.clearOutput();
-        grid = askForGridSize();
-        return grid;
-    }
+    private Grid getSeededGridFromInput() {
+        output.displayOutput(outputMessages.getString("ask_to_seed_grid"));
+        output.displayOutput(outputMessages.getString("tell_format"));
 
-    private Grid setGridConfiguration() {
-        askForGridConfiguration();
-        ArrayList<Coordinate> gridConfiguration = getGridConfiguration();
+        ArrayList<Coordinate> gridConfiguration = getCoordinatesOfLiveCellsFromInput();
         grid.setLiveCells(gridConfiguration);
         return grid;
     }
 
-    private Grid setNextStateOfGeneration(Grid grid) {
-        nextGridState = grid.getCoordinatesOfNextGenerationsCells();
-        Grid nextGenerationGrid = new Grid(grid.getGridWidth(), grid.getGridHeight());
-        nextGenerationGrid.setLiveCells(nextGridState);
-        return nextGenerationGrid;
+    public void pause() {
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-
-    private void loopingTick(Grid grid) {
+    private void gameLoopTick(Grid grid) {
+        //change name to action name, can contain tick, but name it better - done
         for (int cellGenerations = 0; cellGenerations <= 100; cellGenerations++) {
-            grid = setNextStateOfGeneration(grid);
-            output.pause();
-            output.clearOutput();
-            output.displayOutput("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            grid = grid.getNextGenerationOfGrid();
+            output.displayOutput(outputMessages.getString("clearConsole"));
             output.displayOutput(renderer.renderGrid(grid));
+            this.pause();
         }
     }
 
 
     public void runGame() {
-        grid = setUp();
-        grid = setGridConfiguration();
+        this.outputWelcomeMessage();
+        input.prompt();
+        output.displayOutput(outputMessages.getString("clearConsole"));
+        grid = this.getInitialisedGrid();
+        grid = this.getSeededGridFromInput();
         output.displayOutput(renderer.renderGrid(grid));
-        loopingTick(grid);
-        output.clearOutput();
+        this.gameLoopTick(grid);
+        output.displayOutput(outputMessages.getString("end_game"));
+        output.displayOutput(outputMessages.getString("clearConsole"));
     }
 
-    //    private String getUserConfigurationWithValidation(boolean validInput, String userGivenCoordinates) {
-//        while (!validInput) {
-//            output.displayOutput(messages.getString("ask_for_input"));
-//            userGivenCoordinates = input.nextLine();
-//            validInput = IOValidator.validateUserInput(userGivenCoordinates, grid.getGridWidth(), grid.getGridHeight());
-//            output.displayOutput(messages.getString((validInput ? "confirm_input" : "invalid_entry")));
-//        }
-//        return userGivenCoordinates;
-//    }
 
 }

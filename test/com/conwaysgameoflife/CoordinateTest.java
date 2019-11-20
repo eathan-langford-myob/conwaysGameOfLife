@@ -1,26 +1,35 @@
 package com.conwaysgameoflife;
 
-import org.junit.Test;
+import com.conwaysgameoflife.grid.Coordinate;
+import org.junit.*;
 
 import static org.junit.Assert.*;
 
 public class CoordinateTest {
-    Coordinate coordinates;
+    private Coordinate coordinate;
+
+    @Before
+    public void setUp() {
+        coordinate = new Coordinate(2,2);
+    }
+
+    @After
+    public void tearDown() {
+        coordinate = null;
+    }
 
 
     @Test
     public void shouldReturnIntegerRepresentingXCoordinate() {
-        coordinates = new Coordinate(2,0);
-        int actual = coordinates.getX();
+        int actual = coordinate.getX();
         int expected = 2;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldReturnIntegerRepresentingYCoordinate() {
-        coordinates = new Coordinate(0,2);
-        int actual = coordinates.getY();
+    public void shouldReturnIntRepresentingYCoordinate() {
+        int actual = coordinate.getY();
         int expected = 2;
 
         assertEquals(expected,actual);
@@ -28,18 +37,16 @@ public class CoordinateTest {
 
     @Test
     public void shouldReturnIncrementedCoordinateHorizontal() {
-        coordinates = new Coordinate(0,0);
-        Coordinate actual = coordinates.incrementX();
-        Coordinate expected = new Coordinate(1,0);
+        Coordinate actual = coordinate.incrementX();
+        Coordinate expected = new Coordinate(3,2);
 
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldReturnIncrementedCoordinateVertical() {
-        coordinates = new Coordinate(0,0);
-        Coordinate actual = coordinates.incrementY();
-        Coordinate expected = new Coordinate(0,1);
+        Coordinate actual = coordinate.incrementY();
+        Coordinate expected = new Coordinate(2,3);
 
         assertEquals(expected, actual);
     }

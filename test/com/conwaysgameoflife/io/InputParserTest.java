@@ -1,6 +1,6 @@
 package com.conwaysgameoflife.io;
 
-import com.conwaysgameoflife.Coordinate;
+import com.conwaysgameoflife.grid.Coordinate;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -27,7 +27,7 @@ public class InputParserTest {
         String userInput = "3,2";
 
         Coordinate actual = parser.parseSingleCoordinate(userInput);
-        Coordinate expected = new Coordinate(3,2);
+        Coordinate expected = new Coordinate(2,1);
 
         Assert.assertEquals(expected, actual);
     }
@@ -35,13 +35,12 @@ public class InputParserTest {
     @Test
     public void shouldReturnCoordinateArrayOfUserInput_WhenParsed() {
         ArrayList<Coordinate> arrayOfCoordinates = new ArrayList<>();
+        arrayOfCoordinates.add(new Coordinate(1, 1));
         arrayOfCoordinates.add(new Coordinate(2, 2));
-        arrayOfCoordinates.add(new Coordinate(3, 3));
 
         ArrayList<Coordinate> actual = parser.parseUserInputToCoordinates("2,2/3,3");
-        ArrayList<Coordinate> expected = arrayOfCoordinates;
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(arrayOfCoordinates, actual);
     }
 
 }

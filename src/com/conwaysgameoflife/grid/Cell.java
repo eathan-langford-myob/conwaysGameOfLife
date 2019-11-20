@@ -1,4 +1,4 @@
-package com.conwaysgameoflife;
+package com.conwaysgameoflife.grid;
 
 import java.util.Objects;
 
@@ -19,11 +19,6 @@ public class Cell {
         if (o == null || getClass() != o.getClass()) return false;
         Cell cell = (Cell) o;
         return isAlive() == cell.isAlive();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(isAlive());
     }
 
     public boolean isAlive() {
