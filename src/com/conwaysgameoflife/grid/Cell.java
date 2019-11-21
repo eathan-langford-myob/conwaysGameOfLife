@@ -1,7 +1,5 @@
 package com.conwaysgameoflife.grid;
 
-import java.util.Objects;
-
 public class Cell {
     private boolean isAlive;
 

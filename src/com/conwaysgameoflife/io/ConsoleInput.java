@@ -16,8 +16,12 @@ public class ConsoleInput implements IInput {
     }
 
     @Override
-    public void prompt() {
-        scanner.nextLine();
+    public void waitForInput() {
+        try {
+            System.in.read();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
 

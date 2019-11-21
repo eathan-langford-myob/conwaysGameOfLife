@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class InputParser {
 
-    public Coordinate parseSingleCoordinate(String singleUserInputCoordinate) {
+    Coordinate parseSingleCoordinate(String singleInputCoordinate) {
         int x = 0;
         int y = 1;
         int[] parsedSingleCoordinateToInt = new int[2];
-        String[] splitCoordinateString = singleUserInputCoordinate.split(",");
+        String[] splitCoordinateString = singleInputCoordinate.split(",");
 
         parsedSingleCoordinateToInt[x] = Integer.parseInt(splitCoordinateString[x]) - 1;
         parsedSingleCoordinateToInt[y] = Integer.parseInt(splitCoordinateString[y]) - 1;
@@ -18,8 +18,8 @@ public class InputParser {
         return new Coordinate(parsedSingleCoordinateToInt[x], parsedSingleCoordinateToInt[y]);
     }
 
-    public ArrayList<Coordinate> parseUserInputToCoordinates(String userInputStringOfCoordinates) {
-        String[] splitAtDelimiter = userInputStringOfCoordinates.split("/");
+    public ArrayList<Coordinate> parseInputToCoordinates(String inputStringOfCoordinates) {
+        String[] splitAtDelimiter = inputStringOfCoordinates.split("/");
         ArrayList<Coordinate> arrayOfParsedCoordinates = new ArrayList<>(splitAtDelimiter.length);
 
         for (String coordinate : splitAtDelimiter) {

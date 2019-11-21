@@ -9,8 +9,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class InputParserTest {
-    ConsoleInput input;
-    InputParser parser;
+    private InputParser parser;
 
     @Before
     public void setUp() {
@@ -24,21 +23,21 @@ public class InputParserTest {
 
     @Test
     public void shouldReturnSingleParsedCoordinate_WhenGivenString() {
-        String userInput = "3,2";
+        String input = "3,2";
 
-        Coordinate actual = parser.parseSingleCoordinate(userInput);
+        Coordinate actual = parser.parseSingleCoordinate(input);
         Coordinate expected = new Coordinate(2,1);
 
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldReturnCoordinateArrayOfUserInput_WhenParsed() {
+    public void shouldReturnCoordinateArrayOfInput_WhenParsed() {
         ArrayList<Coordinate> arrayOfCoordinates = new ArrayList<>();
         arrayOfCoordinates.add(new Coordinate(1, 1));
         arrayOfCoordinates.add(new Coordinate(2, 2));
 
-        ArrayList<Coordinate> actual = parser.parseUserInputToCoordinates("2,2/3,3");
+        ArrayList<Coordinate> actual = parser.parseInputToCoordinates("2,2/3,3");
 
         Assert.assertEquals(arrayOfCoordinates, actual);
     }

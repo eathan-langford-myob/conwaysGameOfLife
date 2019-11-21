@@ -5,11 +5,12 @@ import com.conwaysgameoflife.grid.Coordinate;
 import com.conwaysgameoflife.grid.Grid;
 
 public class GridStringRender implements GridRender {
-    private StringBuilder parsedBoard = new StringBuilder();
+    private StringBuilder parsedBoard;
 
 
     @Override
     public String renderGrid(Grid grid) {
+        parsedBoard = new StringBuilder();
         for (int y = 0; y < grid.getGridHeight(); y++) {
             for (int x = 0; x < grid.getGridWidth(); x++) {
                 Cell currentCell = grid.getCellByCoordinate(new Coordinate(x, y));

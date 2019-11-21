@@ -10,23 +10,25 @@ public class Grid {
     private int gridHeight;
     private int gridWidth;
 
-    public Grid(int width, int height) {
+    public Grid(int width, int height, ArrayList<Coordinate> coordinatesOfCells) {
         this.gridHeight = height;
         this.gridWidth = width;
         this.grid = new Cell[width][height];
         for (int x = 0; x < gridWidth; x++) {
             for (int y = 0; y < gridHeight; y++) {
-                grid[x][y] = new Cell();
+                if (!coordinatesOfCells.isEmpty() && coordinatesOfCells.contains(new Coordinate(x, y))) {
+                    grid[x][y] = new Cell();
+                    grid[x][y].makeCellAlive();
+                } else {
+                    grid[x][y] = new Cell();
+                }
             }
         }
     }
 
-    public void setLiveCells(ArrayList<Coordinate> coordinatesOfLiveCells) {
-        for (Coordinate coordinate : coordinatesOfLiveCells) {
-            getCellByCoordinate(coordinate).makeCellAlive();
-        }
+    public Grid(int width, int height) {
+        this(width, height, new ArrayList<>(1));
     }
-
 
     public int getGridHeight() {
         return gridHeight;
@@ -39,26 +41,6 @@ public class Grid {
     public Cell getCellByCoordinate(Coordinate coordinate) {
         return grid[coordinate.getX()][coordinate.getY()];
     }
-
-//    public boolean rowHasLiveCells(Coordinate coordinates) {
-//        if (coordinates.getX() <= gridWidth - 1) {
-//            Cell currentCell = getCellByCoordinate(coordinates);
-//            if (currentCell.isAlive()) {
-//                return true;
-//            }
-//            rowHasLiveCells(coordinates.incrementX());
-//        }
-//        return false;
-//    }
-//
-//    public boolean isEmpty() {
-//        for (int y = 1; y < gridHeight; y++) {
-//            if (rowHasLiveCells(new Coordinate(0, y))) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
 
     public Cell[] getNeighborsOfCell(Coordinate coordinate) {
         int x = coordinate.getX();
@@ -109,12 +91,7 @@ public class Grid {
     }
 
     public Grid getNextGenerationOfGrid() {
-        // package for cell and grid - done
-        // maybe split into grid thing that deals with getting and setting grid behaviour or put all into grid
         ArrayList<Coordinate> nextGridConfiguration = getCoordinatesOfNextGenerationsCells();
-        Grid nextGenerationGrid = new Grid(getGridWidth(), getGridHeight());
-        nextGenerationGrid.setLiveCells(nextGridConfiguration);
-
-        return nextGenerationGrid;
+        return new Grid(getGridWidth(), getGridHeight(), nextGridConfiguration);
     }
 }

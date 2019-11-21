@@ -8,24 +8,25 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class StringGridRenderTest {
-
+    private Grid grid;
+    private GridRender boardRenderer;
 
     @Before
     public void setUp() {
+        grid = new Grid(5,5);
+        boardRenderer = new GridStringRender();
     }
 
     @After
     public void tearDown() {
+        grid = null;
+        boardRenderer = null;
     }
-
     @Test
-    public void renderEmptyBoard() {
-        GridRender boardRenderer = new GridStringRender();
-        Grid emptyGrid = new Grid(5, 5);
-
-        String actual = boardRenderer.renderGrid(emptyGrid);
+    public void renderEmptyGrid() {
+        String actual = boardRenderer.renderGrid(grid);
         String expected =
-                "▢  ▢  ▢  ▢  ▢  \n" +
+                        "▢  ▢  ▢  ▢  ▢  \n" +
                         "▢  ▢  ▢  ▢  ▢  \n" +
                         "▢  ▢  ▢  ▢  ▢  \n" +
                         "▢  ▢  ▢  ▢  ▢  \n" +
@@ -36,14 +37,12 @@ public class StringGridRenderTest {
 
     @Test
     public void shouldReturnBoardWithLiveCells_WhenPropellorPatternIsSet() {
-        GridRender boardRenderer = new GridStringRender();
-        Grid gridWithPropellorPattern = new Grid(5, 5);
-        gridWithPropellorPattern.getCellByCoordinate(new Coordinate(2, 1)).makeCellAlive();
-        gridWithPropellorPattern.getCellByCoordinate(new Coordinate(2, 2)).makeCellAlive();
-        gridWithPropellorPattern.getCellByCoordinate(new Coordinate(2, 3)).makeCellAlive();
+        grid.getCellByCoordinate(new Coordinate(2, 1)).makeCellAlive();
+        grid.getCellByCoordinate(new Coordinate(2, 2)).makeCellAlive();
+        grid.getCellByCoordinate(new Coordinate(2, 3)).makeCellAlive();
 
 
-        String actual = boardRenderer.renderGrid(gridWithPropellorPattern);
+        String actual = boardRenderer.renderGrid(grid);
         String expected =
                         "▢  ▢  ▢  ▢  ▢  \n" +
                         "▢  ▢  ▣  ▢  ▢  \n" +
