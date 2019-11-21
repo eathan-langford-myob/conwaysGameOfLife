@@ -15,7 +15,7 @@ public class GridStringRender implements GridRender {
             for (int x = 0; x < grid.getGridWidth(); x++) {
                 Cell currentCell = grid.getCellByCoordinate(new Coordinate(x, y));
                 parseCellToString(currentCell);
-                parsedBoard.append(gridSymbols.SPACE.value);
+                parsedBoard.append(GridSymbols.SPACE.value);
 
             }
             parsedBoard.append("\n");
@@ -24,7 +24,7 @@ public class GridStringRender implements GridRender {
     }
 
     private void parseCellToString(Cell currentCell) {
-        gridSymbols calculateCellToString = currentCell.isAlive() ? gridSymbols.LIVECELL : gridSymbols.DEADCELL;
+        GridSymbols calculateCellToString = currentCell.isAlive() ? GridSymbols.LIVECELL : GridSymbols.DEADCELL;
         parsedBoard.append(calculateCellToString.value);
     }
 

@@ -1,6 +1,6 @@
 package com.conwaysgameoflife.render;
 
-public enum gridSymbols {
+public enum GridSymbols {
     DEADCELL("\u25A2"),
     LIVECELL("\u25A3"),
     SPACE("  ");
@@ -8,7 +8,7 @@ public enum gridSymbols {
 
     String value;
 
-    gridSymbols(String value) {
+    GridSymbols(String value) {
         this.value = value;
     }
 }

@@ -1,7 +1,7 @@
 package com.conwaysgameoflife.rules;
 
-public enum CellLifeRules {
-    LIVECELL {
+public enum CellLifeNextGenRules {
+    ALIVECELL {
         @Override
         public boolean isCellAliveNextGen(long numberOfNeighbors) {
             return numberOfNeighbors == 2 || numberOfNeighbors == 3;

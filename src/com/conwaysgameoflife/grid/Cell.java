@@ -3,8 +3,9 @@ package com.conwaysgameoflife.grid;
 public class Cell {
     private boolean isAlive;
 
+
     public Cell() {
-        this.isAlive = false;
+        this(false);
     }
 
     public Cell(boolean isAlive) {

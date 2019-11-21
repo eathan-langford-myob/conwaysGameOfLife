@@ -20,7 +20,7 @@ public class CoordinateTest {
 
     @Test
     public void shouldReturnIncrementedCoordinate_WhenMovingHorizontal() {
-        Coordinate actual = this.coordinate.incrementX();
+        Coordinate actual = coordinate.incrementX();
         Coordinate expected = new Coordinate(3,2);
 
         assertEquals(expected, actual);
@@ -28,7 +28,7 @@ public class CoordinateTest {
 
     @Test
     public void shouldReturnIncrementedCoordinate_WhenMovingVertical() {
-        Coordinate actual = this.coordinate.incrementY();
+        Coordinate actual = coordinate.incrementY();
         Coordinate expected = new Coordinate(2,3);
 
         assertEquals(expected, actual);

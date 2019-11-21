@@ -17,7 +17,7 @@ public class CellRules {
         long liveCellNeighborsCount = getNumberOfLiveCellsFromNeighbors(neighbors);
 
         return currentCell.isAlive() ?
-                CellLifeRules.LIVECELL.isCellAliveNextGen(liveCellNeighborsCount) :
-                CellLifeRules.DEADCELL.isCellAliveNextGen(liveCellNeighborsCount);
+                CellLifeNextGenRules.ALIVECELL.isCellAliveNextGen(liveCellNeighborsCount) :
+                CellLifeNextGenRules.DEADCELL.isCellAliveNextGen(liveCellNeighborsCount);
     }
 }
