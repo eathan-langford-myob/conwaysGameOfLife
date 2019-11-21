@@ -1,5 +1,4 @@
 package com.conwaysgameoflife.io;
-// raname class to something better, gridInputValidator - done
 
 public class GridInputValidator {
     private static int x = 0;
@@ -12,20 +11,19 @@ public class GridInputValidator {
         return false;
     }
 
-    //has or is in method names returning bools - done
-    public static boolean hasValidDelimiterOrSingleCoordinateFormat(String userInput) {
-        return userInput.contains("/") || isValidSingleCoordinateFormat(userInput);
+    public static boolean hasValidDelimiterOrSingleCoordinateFormat(String input) {
+        return input.contains("/") || isValidSingleCoordinateFormat(input);
     }
 
-    public static boolean isPositiveInteger(String userInput) {
-        if (!userInput.isEmpty()) {
-            return userInput.chars().allMatch(Character::isDigit) && Integer.parseInt(userInput) > 0;
+    public static boolean isPositiveInteger(String input) {
+        if (!input.isEmpty()) {
+            return input.chars().allMatch(Character::isDigit) && Integer.parseInt(input) > 0;
         }
         return false;
     }
 
-    public static boolean isEachCoordinateValidInUserInput(String userInput, int gridWidth, int gridHeight) {
-        String[] arrayFromInput = userInput.split("/");
+    public static boolean isEachCoordinateValidInInput(String input, int gridWidth, int gridHeight) {
+        String[] arrayFromInput = input.split("/");
         for (String singleCoordinate : arrayFromInput) {
             if (!isValidSingleCoordinateFormat(singleCoordinate) || !isValidInputWithinBoardRange(singleCoordinate, gridWidth, gridHeight)) {
                 return false;
@@ -49,8 +47,8 @@ public class GridInputValidator {
         return isInputWithinBoardRange(arrayFromSplitInput, gridWidth, gridHeight);
     }
 
-    public static boolean isValidFormat(String userInput, int gridWidth, int gridHeight) {
-        return hasValidDelimiterOrSingleCoordinateFormat(userInput) &&
-                isEachCoordinateValidInUserInput(userInput, gridWidth, gridHeight);
+    public static boolean isValidFormat(String input, int gridWidth, int gridHeight) {
+        return hasValidDelimiterOrSingleCoordinateFormat(input) &&
+                isEachCoordinateValidInInput(input, gridWidth, gridHeight);
     }
 }

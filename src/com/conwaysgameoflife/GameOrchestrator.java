@@ -13,9 +13,6 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-//RESOURCE BUNDLES DONT NEED TO RECOMPILE
-
-
 public class GameOrchestrator {
     private IInput input;
     private IOutput output;
@@ -40,11 +37,10 @@ public class GameOrchestrator {
         output.displayOutput(outputMessages.getString("rule_overcrowding"));
         output.displayOutput(outputMessages.getString("rule_next_generation"));
         output.displayOutput(outputMessages.getString("rule_resurrect"));
-        output.displayOutput(outputMessages.getString("generation_limit"));
         output.displayOutput(outputMessages.getString("press_enter"));
     }
 
-    private int getValidBoardDimension() {
+    private int getAndValidateGridSetting() {
         boolean validBoardDimension = false;
         String positiveIntegerAsString = "";
 
@@ -56,44 +52,41 @@ public class GameOrchestrator {
         return Integer.parseInt(positiveIntegerAsString);
     }
 
-    private Grid getInitialisedGrid() {
-        output.displayOutput(outputMessages.getString("clearConsole"));
-        output.displayOutput(outputMessages.getString("size_of_grid"));
 
-        output.displayOutput(outputMessages.getString("ask_for_width"));
-        int gridWidth = getValidBoardDimension();
-
-        output.displayOutput(outputMessages.getString("ask_for_height"));
-        int gridHeight = getValidBoardDimension();
-
-        output.displayOutput(outputMessages.getString("clearConsole"));
-        return new Grid(gridWidth, gridHeight);
-    }
-
-
-    private ArrayList<Coordinate> getCoordinatesOfLiveCellsFromInput() {
+    private ArrayList<Coordinate> getCoordinatesOfLiveCellsFromInput(int gridWidth, int gridHeight) {
         boolean isValidInput = false;
-        String userGivenCoordinates = "";
+        String givenCoordinates = "";
 
         while (!isValidInput) {
             output.displayOutput(outputMessages.getString("ask_for_input"));
-            userGivenCoordinates = input.nextLine();
-            isValidInput = GridInputValidator.isValidFormat(userGivenCoordinates, grid.getGridWidth(), grid.getGridHeight());
+            givenCoordinates = input.nextLine();
+            isValidInput = GridInputValidator.isValidFormat(givenCoordinates, gridWidth, gridHeight);
             output.displayOutput(outputMessages.getString((isValidInput ? "confirm_input" : "invalid_entry")));
         }
-        return parser.parseUserInputToCoordinates(userGivenCoordinates);
+        return parser.parseInputToCoordinates(givenCoordinates);
     }
 
     private Grid getSeededGridFromInput() {
+        output.displayOutput(outputMessages.getString("clear_console"));
+        output.displayOutput(outputMessages.getString("size_of_grid"));
+
+        output.displayOutput(outputMessages.getString("ask_for_width"));
+        int gridWidth = getAndValidateGridSetting();
+
+        output.displayOutput(outputMessages.getString("ask_for_height"));
+        int gridHeight = getAndValidateGridSetting();
+
+        output.displayOutput(outputMessages.getString("clear_console"));
+
         output.displayOutput(outputMessages.getString("ask_to_seed_grid"));
         output.displayOutput(outputMessages.getString("tell_format"));
 
-        ArrayList<Coordinate> gridConfiguration = getCoordinatesOfLiveCellsFromInput();
-        grid.setLiveCells(gridConfiguration);
-        return grid;
+        ArrayList<Coordinate> gridConfiguration = getCoordinatesOfLiveCellsFromInput(gridWidth, gridHeight);
+
+        return new Grid(gridWidth, gridHeight, gridConfiguration);
     }
 
-    public void pause() {
+    private void pause() {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
@@ -101,28 +94,31 @@ public class GameOrchestrator {
         }
     }
 
-    private void gameLoopTick(Grid grid) {
-        //change name to action name, can contain tick, but name it better - done
-        for (int cellGenerations = 0; cellGenerations <= 100; cellGenerations++) {
+    private void gameLoopTick(Grid grid, int generations) {
+        tick:for (int cellGenerations = 0; cellGenerations <= generations; cellGenerations++) {
+            if (grid.getNextGenerationOfGrid().equals(grid)) {
+                break tick;
+            }
             grid = grid.getNextGenerationOfGrid();
-            output.displayOutput(outputMessages.getString("clearConsole"));
-            output.displayOutput(renderer.renderGrid(grid));
-            this.pause();
+            output.displayOutput(outputMessages.getString("clear_console"));
+            String gridString = renderer.renderGrid(grid);
+            output.displayOutput(gridString);
+            pause();
         }
     }
 
-
-    public void runGame() {
-        this.outputWelcomeMessage();
-        input.prompt();
-        output.displayOutput(outputMessages.getString("clearConsole"));
-        grid = this.getInitialisedGrid();
-        grid = this.getSeededGridFromInput();
-        output.displayOutput(renderer.renderGrid(grid));
-        this.gameLoopTick(grid);
-        output.displayOutput(outputMessages.getString("end_game"));
-        output.displayOutput(outputMessages.getString("clearConsole"));
+    private int getGenerationAmount() {
+        output.displayOutput(outputMessages.getString("generations_amount"));
+        return getAndValidateGridSetting();
     }
 
-
+    public void runGame() {
+        outputWelcomeMessage();
+        input.waitForInput();
+        output.displayOutput(outputMessages.getString("clear_console"));
+        grid = getSeededGridFromInput();
+        int generationsAmount = getGenerationAmount();
+        gameLoopTick(grid, generationsAmount);
+        output.displayOutput(outputMessages.getString("end_game"));
+    }
 }

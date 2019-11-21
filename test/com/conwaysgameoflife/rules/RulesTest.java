@@ -7,19 +7,23 @@ import org.junit.*;
 
 public class RulesTest {
     private Grid grid;
-    private Cell[] neighbors;
 
     @Before
     public void setUp() {
         grid = new Grid(3, 3);
     }
 
+    @After
+    public void tearDown() {
+        grid = null;
+    }
+
     @Test
-    public void shouldReturnNumberOfLiveNeighbors_WhenQueryingRules() {
+    public void shouldReturnNumberOfLiveNeighbors_WhenCheckingSingleCell() {
         grid.getCellByCoordinate(new Coordinate(1, 0)).makeCellAlive();
         grid.getCellByCoordinate(new Coordinate(2, 0)).makeCellAlive();
         grid.getCellByCoordinate(new Coordinate(0, 2)).makeCellAlive();
-        neighbors = grid.getNeighborsOfCell(new Coordinate(1, 1));
+        Cell[] neighbors = grid.getNeighborsOfCell(new Coordinate(1, 1));
 
         long actual = CellRules.getNumberOfLiveCellsFromNeighbors(neighbors);
         long expected = 3;
@@ -32,7 +36,7 @@ public class RulesTest {
         grid.getCellByCoordinate(new Coordinate(1, 0)).makeCellAlive();
         grid.getCellByCoordinate(new Coordinate(2, 2)).makeCellAlive();
         grid.getCellByCoordinate(new Coordinate(1, 2)).makeCellAlive();
-        neighbors = grid.getNeighborsOfCell(new Coordinate(1, 1));
+        Cell[] neighbors = grid.getNeighborsOfCell(new Coordinate(1, 1));
         Cell queriedCell = grid.getCellByCoordinate(new Coordinate(1, 1));
 
         boolean actual = CellRules.willCellBeAlive(queriedCell, neighbors);
@@ -44,7 +48,7 @@ public class RulesTest {
     public void shouldReturnLiveCell_WhenSurroundedBy2LiveCells() {
         grid.getCellByCoordinate(new Coordinate(1, 0)).makeCellAlive();
         grid.getCellByCoordinate(new Coordinate(2, 0)).makeCellAlive();
-        neighbors = grid.getNeighborsOfCell(new Coordinate(1, 1));
+        Cell[] neighbors = grid.getNeighborsOfCell(new Coordinate(1, 1));
         Cell queriedCell = grid.getCellByCoordinate(new Coordinate(1, 1));
         queriedCell.makeCellAlive();
 
@@ -59,7 +63,7 @@ public class RulesTest {
         grid.getCellByCoordinate(new Coordinate(2, 0)).makeCellAlive();
         grid.getCellByCoordinate(new Coordinate(2, 2)).makeCellAlive();
         grid.getCellByCoordinate(new Coordinate(0, 1)).makeCellAlive();
-        neighbors = grid.getNeighborsOfCell(new Coordinate(1, 1));
+        Cell[] neighbors = grid.getNeighborsOfCell(new Coordinate(1, 1));
         Cell queriedCell = grid.getCellByCoordinate(new Coordinate(1, 1));
         queriedCell.makeCellAlive();
 
@@ -71,7 +75,7 @@ public class RulesTest {
     @Test
     public void shouldReturnFalse_WhenSurroundedByLessThan3LiveCells() {
         grid.getCellByCoordinate(new Coordinate(1, 0)).makeCellAlive();
-        neighbors = grid.getNeighborsOfCell(new Coordinate(1, 1));
+        Cell[] neighbors = grid.getNeighborsOfCell(new Coordinate(1, 1));
         Cell queriedCell = grid.getCellByCoordinate(new Coordinate(1, 1));
         queriedCell.makeCellAlive();
 
